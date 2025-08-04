@@ -1,36 +1,96 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Dental Aid Website Clone
+
+A modern, responsive website clone of [Dental Aid](https://dentalaid.co.nz/) built with Next.js and Tailwind CSS.
+
+## Features
+
+- **Responsive Design**: Fully responsive across all devices
+- **Modern UI**: Clean, professional design with the specified color theme
+- **Component-Based Architecture**: Modular components for easy maintenance
+- **SEO Optimized**: Proper metadata and semantic HTML
+- **Performance Optimized**: Fast loading with Next.js optimizations
+
+## Color Theme
+
+- **Primary Blue**: `#2C2E9F`
+- **Background White**: `#FFFFFF`
+- **Light Gray**: `#F5F5F5`
+
+## Components
+
+- **Header**: Responsive navigation with mobile menu
+- **Hero**: Eye-catching hero section with call-to-action buttons
+- **Services**: Four main service offerings with icons
+- **About**: Company information and mission statement
+- **Contact**: Contact form and information
+- **Footer**: Links and social media icons
+
+## Technologies Used
+
+- **Next.js 15**: React framework with App Router
+- **Tailwind CSS 4**: Utility-first CSS framework
+- **React 19**: Latest React features
+- **Inter Font**: Google Fonts for typography
 
 ## Getting Started
 
-First, run the development server:
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+2. Run the development server:
+   ```bash
+   npm run dev
+   ```
+
+3. Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+## Project Structure
+
+```
+app/
+├── components/
+│   ├── Header.js
+│   ├── Hero.js
+│   ├── Services.js
+│   ├── About.js
+│   ├── Contact.js
+│   └── Footer.js
+├── globals.css
+├── layout.js
+└── page.js
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Services Offered
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+1. **Temping Services**: Temporary dental staff for the greater Auckland region
+2. **Recruitment Services**: Permanent staff hiring solutions
+3. **Staff Training**: Training programs for dental support staff
+4. **Equipment Servicing**: Dental equipment maintenance and repairs
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Responsive Breakpoints
 
-## Learn More
+- Mobile: `< 768px`
+- Tablet: `768px - 1024px`
+- Desktop: `> 1024px`
 
-To learn more about Next.js, take a look at the following resources:
+## Performance Features
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Optimized images and assets
+- Lazy loading components
+- Efficient CSS with Tailwind
+- SEO-friendly structure
+- Fast page loads with Next.js
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Browser Support
 
-## Deploy on Vercel
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## License
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project is for educational purposes only. The original website design belongs to Dental Aid.
+# Fillin_web
