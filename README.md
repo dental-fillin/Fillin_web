@@ -1,4 +1,4 @@
-# Dental Aid Website Clone
+# Fillin - Dental Service
 
 A modern, responsive website clone of [Dental Aid](https://dentalaid.co.nz/) built with Next.js and Tailwind CSS.
 
