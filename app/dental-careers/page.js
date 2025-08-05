@@ -1,94 +1,8 @@
+'use client';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
 export default function DentalCareers() {
-  const careerPositions = [
-    {
-      id: 1,
-      title: 'Dental Hygienist',
-      location: 'Auckland Region',
-      type: 'Full-time / Part-time',
-      salary: '$65,000 - $85,000',
-      description: 'We are seeking experienced dental hygienists to join our team. You will be responsible for providing professional dental hygiene services and patient education.',
-      requirements: [
-        'Bachelor of Oral Health or equivalent qualification',
-        'Current Annual Practicing Certificate',
-        'Minimum 2 years experience preferred',
-        'Excellent communication skills',
-        'Strong attention to detail'
-      ],
-      benefits: [
-        'Competitive salary package',
-        'Professional development opportunities',
-        'Flexible working hours',
-        'Supportive team environment'
-      ]
-    },
-    {
-      id: 2,
-      title: 'Dental Assistant',
-      location: 'Greater Auckland',
-      type: 'Full-time',
-      salary: '$45,000 - $60,000',
-      description: 'Join our team as a dental assistant and support our dentists in providing excellent patient care. Training will be provided for the right candidate.',
-      requirements: [
-        'Certificate in Dental Assisting or equivalent',
-        'Previous experience preferred but not essential',
-        'Excellent organizational skills',
-        'Ability to work in a fast-paced environment',
-        'Strong team player'
-      ],
-      benefits: [
-        'On-the-job training provided',
-        'Career progression opportunities',
-        'Competitive remuneration',
-        'Modern dental practice environment'
-      ]
-    },
-    {
-      id: 3,
-      title: 'Dental Receptionist',
-      location: 'Auckland CBD',
-      type: 'Part-time',
-      salary: '$40,000 - $55,000',
-      description: 'We are looking for a friendly and organized dental receptionist to manage our front desk operations and provide excellent customer service.',
-      requirements: [
-        'Previous reception or customer service experience',
-        'Excellent communication skills',
-        'Proficiency in dental software preferred',
-        'Strong organizational abilities',
-        'Professional appearance and demeanor'
-      ],
-      benefits: [
-        'Flexible working hours',
-        'Supportive work environment',
-        'Opportunity to learn dental industry',
-        'Competitive hourly rate'
-      ]
-    },
-    {
-      id: 4,
-      title: 'Dentist',
-      location: 'Auckland Region',
-      type: 'Full-time',
-      salary: '$120,000 - $180,000',
-      description: 'Experienced dentist needed for a modern, well-established practice. Opportunity for partnership available for the right candidate.',
-      requirements: [
-        'Bachelor of Dental Surgery or equivalent',
-        'Current Annual Practicing Certificate',
-        'Minimum 3 years clinical experience',
-        'Excellent clinical skills',
-        'Strong patient communication skills'
-      ],
-      benefits: [
-        'Competitive salary with bonus structure',
-        'Modern equipment and facilities',
-        'Partnership opportunities',
-        'Professional development support'
-      ]
-    }
-  ];
-
   const testimonials = [
     {
       name: 'Sarah Johnson',
@@ -110,6 +24,13 @@ export default function DentalCareers() {
     }
   ];
 
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <main className="min-h-screen">
       <Header />
@@ -126,11 +47,11 @@ export default function DentalCareers() {
               We offer exciting career opportunities across the greater Auckland region.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-[#2C2E9F] px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+              <button 
+                onClick={() => scrollToSection('current-openings')}
+                className="bg-white text-[#2C2E9F] px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
+              >
                 View Open Positions
-              </button>
-              <button className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-[#2C2E9F] transition-colors">
-                Submit Application
               </button>
             </div>
           </div>
@@ -187,75 +108,51 @@ export default function DentalCareers() {
         </div>
       </section>
 
-      {/* Current Openings */}
-      <section className="py-20 bg-[#F5F5F5]">
+      {/* Current Openings - Coming Soon */}
+      <section id="current-openings" className="py-20 bg-[#F5F5F5]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Current Openings</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Explore our current job opportunities and find the perfect role for your career.
+          <div className="text-center">
+            <div className="w-24 h-24 bg-[#2C2E9F] rounded-full mx-auto mb-8 flex items-center justify-center">
+              <svg className="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">Current Openings</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+              We're currently updating our job listings. New opportunities will be posted here soon!
             </p>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {careerPositions.map((position) => (
-              <div key={position.id} className="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow">
-                <div className="flex justify-between items-start mb-4">
-                  <h3 className="text-2xl font-bold text-gray-900">{position.title}</h3>
-                  <span className="bg-[#2C2E9F] text-white px-3 py-1 rounded-full text-sm font-medium">
-                    {position.type}
-                  </span>
-                </div>
-                
-                <div className="flex items-center text-gray-600 mb-4">
-                  <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+            <div className="bg-white rounded-xl shadow-lg p-8 max-w-2xl mx-auto">
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Coming Soon</h3>
+              <p className="text-gray-600 mb-6">
+                We're working on bringing you the latest dental career opportunities. Check back soon for:
+              </p>
+              <ul className="text-left space-y-3 mb-8">
+                <li className="flex items-center">
+                  <svg className="w-5 h-5 text-[#2C2E9F] mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
-                  <span>{position.location}</span>
-                </div>
-
-                <div className="text-lg font-semibold text-[#2C2E9F] mb-4">
-                  {position.salary}
-                </div>
-
-                <p className="text-gray-600 mb-6 leading-relaxed">
-                  {position.description}
-                </p>
-
-                <div className="mb-6">
-                  <h4 className="font-semibold text-gray-900 mb-3">Requirements:</h4>
-                  <ul className="space-y-2">
-                    {position.requirements.map((req, index) => (
-                      <li key={index} className="flex items-start">
-                        <svg className="w-4 h-4 text-[#2C2E9F] mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                        </svg>
-                        <span className="text-gray-600">{req}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div className="mb-6">
-                  <h4 className="font-semibold text-gray-900 mb-3">Benefits:</h4>
-                  <ul className="space-y-2">
-                    {position.benefits.map((benefit, index) => (
-                      <li key={index} className="flex items-start">
-                        <svg className="w-4 h-4 text-[#2C2E9F] mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                        </svg>
-                        <span className="text-gray-600">{benefit}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <button className="w-full bg-[#2C2E9F] text-white py-3 px-6 rounded-lg font-semibold hover:bg-[#1a1c6b] transition-colors">
-                  Apply Now
-                </button>
-              </div>
-            ))}
+                  <span className="text-gray-700">Dental Hygienist positions</span>
+                </li>
+                <li className="flex items-center">
+                  <svg className="w-5 h-5 text-[#2C2E9F] mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span className="text-gray-700">Dental Assistant roles</span>
+                </li>
+                <li className="flex items-center">
+                  <svg className="w-5 h-5 text-[#2C2E9F] mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span className="text-gray-700">Dental Receptionist opportunities</span>
+                </li>
+                <li className="flex items-center">
+                  <svg className="w-5 h-5 text-[#2C2E9F] mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span className="text-gray-700">Dentist positions</span>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
@@ -292,134 +189,7 @@ export default function DentalCareers() {
       </section>
 
       {/* Application Form */}
-      <section className="py-20 bg-[#F5F5F5]">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white rounded-xl shadow-lg p-8">
-            <div className="text-center mb-8">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">Submit Your Application</h2>
-              <p className="text-gray-600">
-                Can't find the right position? Submit a general application and we'll keep you in mind for future opportunities.
-              </p>
-            </div>
-
-            <form className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-2">
-                    First Name
-                  </label>
-                  <input
-                    type="text"
-                    id="firstName"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2C2E9F] focus:border-transparent bg-white text-gray-900"
-                    required
-                  />
-                </div>
-                <div>
-                  <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 mb-2">
-                    Last Name
-                  </label>
-                  <input
-                    type="text"
-                    id="lastName"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2C2E9F] focus:border-transparent bg-white text-gray-900"
-                    required
-                  />
-                </div>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                    Email Address
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2C2E9F] focus:border-transparent bg-white text-gray-900"
-                    required
-                  />
-                </div>
-                <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
-                    Phone Number
-                  </label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2C2E9F] focus:border-transparent bg-white text-gray-900"
-                    required
-                  />
-                </div>
-              </div>
-
-              <div>
-                <label htmlFor="position" className="block text-sm font-medium text-gray-700 mb-2">
-                  Position of Interest
-                </label>
-                <select
-                  id="position"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2C2E9F] focus:border-transparent bg-white text-gray-900"
-                >
-                  <option value="">Select a position</option>
-                  <option value="dental-hygienist">Dental Hygienist</option>
-                  <option value="dental-assistant">Dental Assistant</option>
-                  <option value="dental-receptionist">Dental Receptionist</option>
-                  <option value="dentist">Dentist</option>
-                  <option value="other">Other</option>
-                </select>
-              </div>
-
-              <div>
-                <label htmlFor="experience" className="block text-sm font-medium text-gray-700 mb-2">
-                  Years of Experience
-                </label>
-                <select
-                  id="experience"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2C2E9F] focus:border-transparent bg-white text-gray-900"
-                >
-                  <option value="">Select experience level</option>
-                  <option value="0-1">0-1 years</option>
-                  <option value="1-3">1-3 years</option>
-                  <option value="3-5">3-5 years</option>
-                  <option value="5+">5+ years</option>
-                </select>
-              </div>
-
-              <div>
-                <label htmlFor="coverLetter" className="block text-sm font-medium text-gray-700 mb-2">
-                  Cover Letter
-                </label>
-                <textarea
-                  id="coverLetter"
-                  rows={4}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2C2E9F] focus:border-transparent bg-white text-gray-900"
-                  placeholder="Tell us about your experience and why you'd like to join our team..."
-                ></textarea>
-              </div>
-
-              <div>
-                <label htmlFor="resume" className="block text-sm font-medium text-gray-700 mb-2">
-                  Resume/CV
-                </label>
-                <input
-                  type="file"
-                  id="resume"
-                  accept=".pdf,.doc,.docx"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2C2E9F] focus:border-transparent bg-white text-gray-900"
-                />
-              </div>
-
-              <button
-                type="submit"
-                className="w-full bg-[#2C2E9F] text-white py-3 px-6 rounded-lg font-semibold hover:bg-[#1a1c6b] transition-colors"
-              >
-                Submit Application
-              </button>
-            </form>
-          </div>
-        </div>
-      </section>
+     
 
       <Footer />
     </main>

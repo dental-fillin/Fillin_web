@@ -50,30 +50,57 @@ export default function Contact() {
             </form>
           </div>
 
-          {/* Contact Info */}
+          {/* Contact Info & Why Choose Fillin */}
           <div className="space-y-8">
             <div className="bg-[#F5F5F5] rounded-xl p-8 shadow">
               <h3 className="text-2xl font-bold text-gray-900 mb-4">Contact Information</h3>
               <div className="space-y-4">
                 <div className="flex items-center text-gray-700">
                   <svg className="w-6 h-6 text-[#2C2E9F] mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 2a2 2 0 012 2v16a2 2 0 01-2 2H8a2 2 0 01-2-2V4a2 2 0 012-2h8zm-4 18v-6m0 0V8m0 6h4m-4 0H8" /></svg>
-                  <span>09 123 4567</span>
+                  <span>+64 9 XXX XXXX</span>
                 </div>
                 <div className="flex items-center text-gray-700">
                   <svg className="w-6 h-6 text-[#2C2E9F] mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 12H8m8 0a4 4 0 11-8 0 4 4 0 018 0zm-8 0a8 8 0 1116 0 8 8 0 01-16 0z" /></svg>
-                  <span>info@fillin.co.nz</span>
+                  <span>info@dentalaid.co.nz</span>
                 </div>
                 <div className="flex items-center text-gray-700">
                   <svg className="w-6 h-6 text-[#2C2E9F] mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
-                  <span>123 Dental Street, Auckland, NZ</span>
+                  <div>
+                    <div>Greater Auckland Region</div>
+                    <div className="text-sm text-gray-500">From Orewa to Pukekohe</div>
+                  </div>
                 </div>
               </div>
             </div>
-            {/* Map Placeholder */}
-            <div className="bg-[#F5F5F5] rounded-xl p-8 shadow flex flex-col items-center justify-center min-h-[200px]">
-              <h3 className="text-xl font-bold text-gray-900 mb-2">Our Location</h3>
-              <div className="w-full h-48 bg-gray-300 rounded-lg flex items-center justify-center text-gray-500">
-                Map Placeholder
+
+            {/* Why Choose Fillin */}
+            <div className="bg-[#2C2E9F] rounded-xl p-8 shadow text-white">
+              <h3 className="text-2xl font-bold mb-6">Why Choose Fillin?</h3>
+              <div className="space-y-4">
+                <div className="flex items-start">
+                  <svg className="w-5 h-5 text-white mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span>Professional and qualified staff</span>
+                </div>
+                <div className="flex items-start">
+                  <svg className="w-5 h-5 text-white mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span>Comprehensive service coverage</span>
+                </div>
+                <div className="flex items-start">
+                  <svg className="w-5 h-5 text-white mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span>Reliable and trusted partner</span>
+                </div>
+                <div className="flex items-start">
+                  <svg className="w-5 h-5 text-white mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span>Years of industry experience</span>
+                </div>
               </div>
             </div>
           </div>

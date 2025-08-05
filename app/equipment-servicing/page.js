@@ -1,83 +1,8 @@
+'use client';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
 export default function EquipmentServicing() {
-  const services = [
-    {
-      id: 1,
-      title: 'Electrical Safety Testing',
-      description: 'Comprehensive electrical safety testing for dental and medical equipment to ensure compliance with safety standards.',
-      features: [
-        'PAT testing for all electrical equipment',
-        'Compliance with NZ safety standards',
-        'Detailed testing reports',
-        'Safety certification documentation',
-        'Regular maintenance scheduling',
-        'Emergency response service'
-      ],
-      icon: (
-        <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-        </svg>
-      )
-    },
-    {
-      id: 2,
-      title: 'Preventive Maintenance',
-      description: 'Regular preventive maintenance to keep your dental equipment running smoothly and extend its lifespan.',
-      features: [
-        'Scheduled maintenance visits',
-        'Equipment performance monitoring',
-        'Parts replacement planning',
-        'Lubrication and cleaning',
-        'Calibration services',
-        'Performance optimization'
-      ],
-      icon: (
-        <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-        </svg>
-      )
-    },
-    {
-      id: 3,
-      title: 'Repair Services',
-      description: 'Expert repair services for all types of dental equipment with quick turnaround times and quality guarantees.',
-      features: [
-        'Diagnostic testing and troubleshooting',
-        'Component replacement',
-        'Software updates and calibration',
-        'Emergency repair services',
-        'Warranty on all repairs',
-        'Ongoing technical support'
-      ],
-      icon: (
-        <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z" />
-        </svg>
-      )
-    },
-    {
-      id: 4,
-      title: 'Equipment Installation',
-      description: 'Professional installation services for new dental equipment with setup and training included.',
-      features: [
-        'New equipment installation',
-        'System integration',
-        'Staff training and orientation',
-        'Safety compliance checks',
-        'Performance testing',
-        'Documentation and manuals'
-      ],
-      icon: (
-        <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-        </svg>
-      )
-    }
-  ];
-
   const equipmentTypes = [
     {
       category: 'Dental Chairs',
@@ -122,6 +47,13 @@ export default function EquipmentServicing() {
     }
   ];
 
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <main className="min-h-screen">
       <Header />
@@ -138,12 +70,12 @@ export default function EquipmentServicing() {
               some minor repairs and maintenance work. We will also be expanding soon to include all repairs 
               and service work for dental equipment.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-[#2C2E9F] px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+            <div className="flex justify-center">
+              <button 
+                onClick={() => scrollToSection('our-services')}
+                className="bg-white text-[#2C2E9F] px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
+              >
                 View Services
-              </button>
-              <button className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-[#2C2E9F] transition-colors">
-                Schedule Service
               </button>
             </div>
           </div>
@@ -262,43 +194,54 @@ export default function EquipmentServicing() {
       </section>
 
       {/* Services */}
-      <section className="py-20 bg-[#F5F5F5]">
+      <section id="our-services" className="py-20 bg-[#F5F5F5]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Services</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Comprehensive equipment servicing solutions to keep your dental practice running smoothly
+              Professional equipment servicing solutions for your dental practice
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {services.map((service) => (
-              <div key={service.id} className="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow">
-                <div className="text-[#2C2E9F] mb-6">
-                  {service.icon}
-                </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">{service.title}</h3>
-                <p className="text-gray-600 mb-6 leading-relaxed">
-                  {service.description}
-                </p>
-                <div className="mb-6">
-                  <h4 className="font-semibold text-gray-900 mb-3">Service Features:</h4>
-                  <ul className="space-y-2">
-                    {service.features.map((feature, index) => (
-                      <li key={index} className="flex items-start">
-                        <svg className="w-4 h-4 text-[#2C2E9F] mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                        </svg>
-                        <span className="text-gray-600">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <button className="w-full bg-[#2C2E9F] text-white py-3 px-6 rounded-lg font-semibold hover:bg-[#1a1c6b] transition-colors">
-                  Learn More
-                </button>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="bg-white rounded-xl shadow-lg p-8">
+              <div className="text-[#2C2E9F] mb-6">
+                <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                </svg>
               </div>
-            ))}
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Electrical Safety Testing</h3>
+              <p className="text-gray-600 leading-relaxed">
+                Our service department provides electrical safety testing for medical and dental equipment, 
+                in accordance with the Australia and New Zealand standard AU/NZS 3551:2012.
+              </p>
+            </div>
+
+            <div className="bg-white rounded-xl shadow-lg p-8">
+              <div className="text-[#2C2E9F] mb-6">
+                <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z" />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Dental Equipment Servicing and Repairs</h3>
+              <p className="text-gray-600 leading-relaxed">
+                Our technicians can help service and repair most dental equipment and x-ray devices. 
+                Contact us for more information on our equipment services.
+              </p>
+            </div>
+
+            <div className="bg-white rounded-xl shadow-lg p-8">
+              <div className="text-[#2C2E9F] mb-6">
+                <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Technical and Electrical Services</h3>
+              <p className="text-gray-600 leading-relaxed">
+                We are available on-call from 6am to 9pm for technical and electrical work. 
+                Feel free to contact us during those hours for help with your dental equipment.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -367,109 +310,23 @@ export default function EquipmentServicing() {
       {/* Contact Section */}
       <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-[#F5F5F5] rounded-xl shadow-lg p-8">
-            <div className="text-center mb-8">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">Schedule Equipment Service</h2>
-              <p className="text-gray-600">
-                Contact us to schedule equipment maintenance, repairs, or to discuss your servicing needs.
-              </p>
+          <div className="bg-[#F5F5F5] rounded-xl shadow-lg p-12 text-center">
+            <div className="w-20 h-20 bg-[#2C2E9F] rounded-full mx-auto mb-6 flex items-center justify-center">
+              <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
             </div>
-
-            <form className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-                    Full Name
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2C2E9F] focus:border-transparent bg-white text-gray-900"
-                    required
-                  />
-                </div>
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                    Email Address
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2C2E9F] focus:border-transparent bg-white text-gray-900"
-                    required
-                  />
-                </div>
-              </div>
-
-              <div>
-                <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
-                  Phone Number
-                </label>
-                <input
-                  type="tel"
-                  id="phone"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2C2E9F] focus:border-transparent bg-white text-gray-900"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="practice" className="block text-sm font-medium text-gray-700 mb-2">
-                  Practice Name
-                </label>
-                <input
-                  type="text"
-                  id="practice"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2C2E9F] focus:border-transparent bg-white text-gray-900"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="serviceType" className="block text-sm font-medium text-gray-700 mb-2">
-                  Service Required
-                </label>
-                <select
-                  id="serviceType"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2C2E9F] focus:border-transparent bg-white text-gray-900"
-                >
-                  <option value="">Select service type</option>
-                  <option value="electrical-testing">Electrical Safety Testing</option>
-                  <option value="preventive-maintenance">Preventive Maintenance</option>
-                  <option value="repair">Repair Services</option>
-                  <option value="installation">Equipment Installation</option>
-                  <option value="emergency">Emergency Service</option>
-                </select>
-              </div>
-
-              <div>
-                <label htmlFor="equipment" className="block text-sm font-medium text-gray-700 mb-2">
-                  Equipment Details
-                </label>
-                <textarea
-                  id="equipment"
-                  rows={4}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2C2E9F] focus:border-transparent bg-white text-gray-900"
-                  placeholder="Please describe the equipment and any issues you're experiencing..."
-                ></textarea>
-              </div>
-
-              <div>
-                <label htmlFor="preferredDate" className="block text-sm font-medium text-gray-700 mb-2">
-                  Preferred Service Date
-                </label>
-                <input
-                  type="date"
-                  id="preferredDate"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2C2E9F] focus:border-transparent bg-white text-gray-900"
-                />
-              </div>
-
-              <button
-                type="submit"
-                className="w-full bg-[#2C2E9F] text-white py-3 px-6 rounded-lg font-semibold hover:bg-[#1a1c6b] transition-colors"
-              >
-                Schedule Service
-              </button>
-            </form>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Need Equipment Service?</h2>
+            <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+              Contact us to schedule equipment maintenance, repairs, or to discuss your servicing needs. 
+              Our team is ready to help keep your dental practice running smoothly.
+            </p>
+            <a 
+              href="/contact" 
+              className="inline-block bg-[#2C2E9F] text-white px-8 py-4 rounded-lg font-semibold hover:bg-[#1a1c6b] transition-colors text-lg"
+            >
+              Contact Us
+            </a>
           </div>
         </div>
       </section>

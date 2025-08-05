@@ -2,72 +2,6 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 
 export default function StaffTraining() {
-  const trainingPrograms = [
-    {
-      id: 1,
-      title: 'Dental Assistant Training',
-      duration: '4-6 weeks',
-      level: 'Beginner to Intermediate',
-      description: 'Comprehensive training program for dental assistants covering all aspects of dental practice support.',
-      topics: [
-        'Dental terminology and anatomy',
-        'Infection control and sterilization',
-        'Chairside assisting techniques',
-        'Dental equipment operation',
-        'Patient care and communication',
-        'Practice management software'
-      ],
-      benefits: [
-        'Hands-on practical training',
-        'Industry-recognized certification',
-        'Job placement assistance',
-        'Ongoing support and mentoring'
-      ]
-    },
-    {
-      id: 2,
-      title: 'Dental Receptionist Training',
-      duration: '3-4 weeks',
-      level: 'Beginner',
-      description: 'Specialized training for dental receptionists to manage front desk operations effectively.',
-      topics: [
-        'Patient scheduling and management',
-        'Dental software systems',
-        'Insurance and billing procedures',
-        'Customer service excellence',
-        'Practice communication protocols',
-        'Administrative best practices'
-      ],
-      benefits: [
-        'Real-world practice scenarios',
-        'Software training included',
-        'Communication skills development',
-        'Career pathway guidance'
-      ]
-    },
-    {
-      id: 3,
-      title: 'Practice Manager Training',
-      duration: '6-8 weeks',
-      level: 'Intermediate to Advanced',
-      description: 'Advanced training program for practice managers to oversee dental practice operations.',
-      topics: [
-        'Practice management systems',
-        'Staff supervision and leadership',
-        'Financial management and reporting',
-        'Marketing and patient retention',
-        'Compliance and regulations',
-        'Strategic planning and growth'
-      ],
-      benefits: [
-        'Leadership development',
-        'Business management skills',
-        'Industry networking opportunities',
-        'Mentorship from experienced managers'
-      ]
-    }
-  ];
-
   const testimonials = [
     {
       name: 'Lisa Thompson',
@@ -104,14 +38,6 @@ export default function StaffTraining() {
               Looking to train or upskill your staff? We offer customised training courses for assistants, 
               receptionists, and practice managers.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-[#2C2E9F] px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
-                View Training Programs
-              </button>
-              <button className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-[#2C2E9F] transition-colors">
-                Enquire Now
-              </button>
-            </div>
           </div>
         </div>
       </section>
@@ -228,76 +154,8 @@ export default function StaffTraining() {
         </div>
       </section>
 
-      {/* Training Programs */}
-      <section className="py-20 bg-[#F5F5F5]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Training Programs</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Comprehensive training programs designed to develop skilled dental professionals
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {trainingPrograms.map((program) => (
-              <div key={program.id} className="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow">
-                <div className="flex justify-between items-start mb-4">
-                  <h3 className="text-2xl font-bold text-gray-900">{program.title}</h3>
-                  <span className="bg-[#2C2E9F] text-white px-3 py-1 rounded-full text-sm font-medium">
-                    {program.level}
-                  </span>
-                </div>
-                
-                <div className="flex items-center text-gray-600 mb-4">
-                  <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                  <span>Duration: {program.duration}</span>
-                </div>
-
-                <p className="text-gray-600 mb-6 leading-relaxed">
-                  {program.description}
-                </p>
-
-                <div className="mb-6">
-                  <h4 className="font-semibold text-gray-900 mb-3">Topics Covered:</h4>
-                  <ul className="space-y-2">
-                    {program.topics.map((topic, index) => (
-                      <li key={index} className="flex items-start">
-                        <svg className="w-4 h-4 text-[#2C2E9F] mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                        </svg>
-                        <span className="text-gray-600">{topic}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div className="mb-6">
-                  <h4 className="font-semibold text-gray-900 mb-3">Program Benefits:</h4>
-                  <ul className="space-y-2">
-                    {program.benefits.map((benefit, index) => (
-                      <li key={index} className="flex items-start">
-                        <svg className="w-4 h-4 text-[#2C2E9F] mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                        </svg>
-                        <span className="text-gray-600">{benefit}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <button className="w-full bg-[#2C2E9F] text-white py-3 px-6 rounded-lg font-semibold hover:bg-[#1a1c6b] transition-colors">
-                  Enquire Now
-                </button>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Testimonials */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-[#F5F5F5]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">What Our Graduates Say</h2>
@@ -308,7 +166,7 @@ export default function StaffTraining() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
-              <div key={index} className="bg-[#F5F5F5] rounded-xl p-8 text-center">
+              <div key={index} className="bg-white rounded-xl p-8 text-center">
                 <div className="flex justify-center mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
                     <svg key={i} className="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
@@ -328,89 +186,25 @@ export default function StaffTraining() {
       </section>
 
       {/* Contact Section */}
-      <section className="py-20 bg-[#F5F5F5]">
+      <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white rounded-xl shadow-lg p-8">
-            <div className="text-center mb-8">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">Get in Touch!</h2>
-              <p className="text-gray-600">
-                Whether you are a clinic looking for staff or a job-seeker searching for the right position, 
-                call or email us and we would be happy to help you meet your needs.
-              </p>
+          <div className="bg-[#F5F5F5] rounded-xl shadow-lg p-12 text-center">
+            <div className="w-20 h-20 bg-[#2C2E9F] rounded-full mx-auto mb-6 flex items-center justify-center">
+              <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
             </div>
-
-            <form className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-                    Full Name
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2C2E9F] focus:border-transparent bg-white text-gray-900"
-                    required
-                  />
-                </div>
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                    Email Address
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2C2E9F] focus:border-transparent bg-white text-gray-900"
-                    required
-                  />
-                </div>
-              </div>
-
-              <div>
-                <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
-                  Phone Number
-                </label>
-                <input
-                  type="tel"
-                  id="phone"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2C2E9F] focus:border-transparent bg-white text-gray-900"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="trainingType" className="block text-sm font-medium text-gray-700 mb-2">
-                  Training Interest
-                </label>
-                <select
-                  id="trainingType"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2C2E9F] focus:border-transparent bg-white text-gray-900"
-                >
-                  <option value="">Select training program</option>
-                  <option value="dental-assistant">Dental Assistant Training</option>
-                  <option value="dental-receptionist">Dental Receptionist Training</option>
-                  <option value="practice-manager">Practice Manager Training</option>
-                  <option value="custom">Custom Training Program</option>
-                </select>
-              </div>
-
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  rows={4}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2C2E9F] focus:border-transparent bg-white text-gray-900"
-                  placeholder="Tell us about your training needs and requirements..."
-                ></textarea>
-              </div>
-
-              <button
-                type="submit"
-                className="w-full bg-[#2C2E9F] text-white py-3 px-6 rounded-lg font-semibold hover:bg-[#1a1c6b] transition-colors"
-              >
-                Contact Us
-              </button>
-            </form>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Ready to Get Started?</h2>
+            <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+              Whether you are a clinic looking for staff training or a job-seeker searching for the right training program, 
+              we would be happy to help you meet your needs.
+            </p>
+            <a 
+              href="/contact" 
+              className="inline-block bg-[#2C2E9F] text-white px-8 py-4 rounded-lg font-semibold hover:bg-[#1a1c6b] transition-colors text-lg"
+            >
+              Contact Us
+            </a>
           </div>
         </div>
       </section>

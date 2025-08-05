@@ -16,7 +16,7 @@ export default function Header() {
           {/* Logo */}
           <div className="flex items-center space-x-3">
             <Image
-              src="/logo2.jpeg"
+              src="/logofin.svg"
               alt="Fillin Logo"
               width={40}
               height={40}
