@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
-import { firestore } from '../firebase/config';
+// import { firestore } from '../firebase/config';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 

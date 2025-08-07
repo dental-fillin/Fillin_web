@@ -1,17 +1,6 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { collection, getDocs, deleteDoc, doc } from 'firebase/firestore';
-import { firestore } from '../firebase/config';
-
-const isFirebaseConfigured = () => {
-  const requiredEnvVars = [
-    'NEXT_PUBLIC_FIREBASE_API_KEY',
-    'NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN',
-    'NEXT_PUBLIC_FIREBASE_PROJECT_ID'
-  ];
-  return requiredEnvVars.every(key => process.env[key]);
-};
 
 export default function AdminDashboard() {
   const [contacts, setContacts] = useState([]);
@@ -19,25 +8,18 @@ export default function AdminDashboard() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    if (isFirebaseConfigured()) {
-      fetchContacts();
-    } else {
-      setError('Firebase is not configured. Please check your environment variables.');
-      setLoading(false);
-    }
+    fetchContacts();
   }, []);
 
   const fetchContacts = async () => {
     try {
-      const contactsCollection = collection(firestore, 'contacts');
-      const contactsSnapshot = await getDocs(contactsCollection);
-      const contactsList = contactsSnapshot.docs.map(doc => ({
-        id: doc.id,
-        ...doc.data()
-      }));
-      setContacts(contactsList);
+      const response = await fetch('/api/contacts');
+      if (!response.ok) throw new Error('Failed to fetch');
+      const data = await response.json();
+      setContacts(data);
       setLoading(false);
     } catch (err) {
+      console.error(err);
       setError('Failed to fetch contacts');
       setLoading(false);
     }
@@ -45,19 +27,42 @@ export default function AdminDashboard() {
 
   const handleDelete = async (id) => {
     try {
-      await deleteDoc(doc(firestore, 'contacts', id));
-      setContacts(contacts.filter(contact => contact.id !== id));
+      const response = await fetch('/api/contacts', {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ id }),
+      });
+
+      if (!response.ok) throw new Error('Delete failed');
+      setContacts((prev) => prev.filter((contact) => contact.id !== id));
     } catch (err) {
+      console.error(err);
       setError('Failed to delete contact');
     }
   };
+
+  const handleLogout = async () => {
+  await fetch('/api/admin-logout', { method: 'POST' });
+  window.location.href = '/admin-login';
+};
 
   if (loading) return <div className="p-4">Loading...</div>;
   if (error) return <div className="p-4 text-red-500">{error}</div>;
 
   return (
     <div className="container mx-auto p-4">
-      <h1 className="text-3xl font-bold mb-6">Admin Dashboard - Contact Forms</h1>
+      <div className="flex justify-between items-center mb-6">
+        <h1 className="text-3xl font-bold">Admin Dashboard - Contact Forms</h1>
+        <button
+          onClick={handleLogout}
+          className="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 transition"
+        >
+          Logout
+        </button>
+      </div>
+
       <div className="overflow-x-auto">
         <table className="min-w-full bg-white border border-gray-300">
           <thead>
@@ -76,7 +81,9 @@ export default function AdminDashboard() {
                 <td className="px-6 py-4 border-b">{contact.email}</td>
                 <td className="px-6 py-4 border-b">{contact.message}</td>
                 <td className="px-6 py-4 border-b">
-                  {new Date(contact.timestamp?.toDate()).toLocaleString()}
+                  {contact.created_at
+                    ? new Date(contact.created_at).toLocaleString()
+                    : 'N/A'}
                 </td>
                 <td className="px-6 py-4 border-b">
                   <button

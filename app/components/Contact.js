@@ -1,33 +1,19 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
-import { firestore } from '../firebase/config';
-
-const isFirebaseConfigured = () => {
-  const requiredEnvVars = [
-    'NEXT_PUBLIC_FIREBASE_API_KEY',
-    'NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN',
-    'NEXT_PUBLIC_FIREBASE_PROJECT_ID'
-  ];
-  return requiredEnvVars.every(key => process.env[key]);
-};
+import { useState } from 'react';
 
 export default function Contact() {
-  const [isConfigured, setIsConfigured] = useState(true);
-
-  useEffect(() => {
-    setIsConfigured(isFirebaseConfigured());
-  }, []);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     message: ''
   });
+
   const [status, setStatus] = useState({
     type: '',
     message: ''
   });
+
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e) => {
@@ -39,23 +25,23 @@ export default function Contact() {
   };
 
   const handleSubmit = async (e) => {
-    if (!isConfigured) {
-      setStatus({
-        type: 'error',
-        message: 'Firebase is not configured. Please check your environment variables.'
-      });
-      return;
-    }
     e.preventDefault();
     setIsSubmitting(true);
     setStatus({ type: '', message: '' });
 
     try {
-      const contactsRef = collection(firestore, 'contacts');
-      await addDoc(contactsRef, {
-        ...formData,
-        timestamp: serverTimestamp()
+      const response = await fetch('/api/contacts', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
       });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.error || 'Submission failed');
+      }
 
       setStatus({
         type: 'success',
