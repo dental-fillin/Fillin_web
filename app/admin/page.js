@@ -29,9 +29,7 @@ export default function AdminDashboard() {
     try {
       const response = await fetch('/api/contacts', {
         method: 'DELETE',
-        headers: {
-          'Content-Type': 'application/json',
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ id }),
       });
 
@@ -44,9 +42,9 @@ export default function AdminDashboard() {
   };
 
   const handleLogout = async () => {
-  await fetch('/api/admin-logout', { method: 'POST' });
-  window.location.href = '/admin-login';
-};
+    await fetch('/api/admin-logout', { method: 'POST' });
+    window.location.href = '/admin-login';
+  };
 
   if (loading) return <div className="p-4">Loading...</div>;
   if (error) return <div className="p-4 text-red-500">{error}</div>;
@@ -69,6 +67,8 @@ export default function AdminDashboard() {
             <tr className="bg-gray-100">
               <th className="px-6 py-3 border-b text-left">Name</th>
               <th className="px-6 py-3 border-b text-left">Email</th>
+              <th className="px-6 py-3 border-b text-left">Phone</th>
+              <th className="px-6 py-3 border-b text-left">Subject</th>
               <th className="px-6 py-3 border-b text-left">Message</th>
               <th className="px-6 py-3 border-b text-left">Date</th>
               <th className="px-6 py-3 border-b text-left">Actions</th>
@@ -77,13 +77,13 @@ export default function AdminDashboard() {
           <tbody>
             {contacts.map((contact) => (
               <tr key={contact.id} className="hover:bg-gray-50">
-                <td className="px-6 py-4 border-b">{contact.name}</td>
-                <td className="px-6 py-4 border-b">{contact.email}</td>
-                <td className="px-6 py-4 border-b">{contact.message}</td>
+                <td className="px-6 py-4 border-b">{contact.name || '—'}</td>
+                <td className="px-6 py-4 border-b">{contact.email || '—'}</td>
+                <td className="px-6 py-4 border-b">{contact.phone || '—'}</td>
+                <td className="px-6 py-4 border-b">{contact.subject || '—'}</td>
+                <td className="px-6 py-4 border-b">{contact.message || '—'}</td>
                 <td className="px-6 py-4 border-b">
-                  {contact.created_at
-                    ? new Date(contact.created_at).toLocaleString()
-                    : 'N/A'}
+                  {contact.created_at ? new Date(contact.created_at).toLocaleString() : 'N/A'}
                 </td>
                 <td className="px-6 py-4 border-b">
                   <button
@@ -95,6 +95,14 @@ export default function AdminDashboard() {
                 </td>
               </tr>
             ))}
+
+            {contacts.length === 0 && (
+              <tr>
+                <td className="px-6 py-6 text-center text-gray-500" colSpan={7}>
+                  No contacts found.
+                </td>
+              </tr>
+            )}
           </tbody>
         </table>
       </div>

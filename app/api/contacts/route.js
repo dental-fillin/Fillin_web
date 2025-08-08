@@ -31,19 +31,29 @@ export async function GET(request) {
 
 
 export async function POST(request) {
-  const { name, email, message } = await request.json();
+  const { name, email, phone, subject, message } = await request.json();
 
-  if (!name || !email || !message) {
-    return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
+   if (!name || !email || !message || !phone) {
+    return NextResponse.json(
+      { error: 'Missing required fields: name, email, phone, message' },
+      { status: 400 }
+    );
   }
 
-  const { error } = await supabase.from('contacts').insert([{ name, email, message }]);
+  const { data, error } = await supabase
+    .from('contacts')
+    .insert([{ name, email, phone, subject, message }])
+    .select('id, created_at')
+    .single();
 
   if (error) {
     return NextResponse.json({ error: error.message }, { status: 500 });
   }
 
-  return NextResponse.json({ message: 'Contact submitted successfully' }, { status: 201 });
+  return NextResponse.json(
+    { message: 'Contact submitted successfully', id: data.id, created_at: data.created_at },
+    { status: 201 }
+  );
 }
 
 // DELETE /api/contacts  -> admin only
