@@ -11,7 +11,9 @@ async function requireAdmin(request, resForSession) {
 export async function GET(request) {
   const res = new NextResponse(); 
   const ok = await requireAdmin(request, res);
-  if (!ok) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+  if (!ok) {
+    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+  }
 
   const { data, error } = await supabase
     .from('contacts')
@@ -22,18 +24,20 @@ export async function GET(request) {
     return NextResponse.json({ error: error.message }, { status: 500 });
   }
 
-
   return new NextResponse(JSON.stringify(data), {
     status: 200,
-    headers: { 'Content-Type': 'application/json', ...Object.fromEntries(res.headers) },
+    headers: {
+      'Content-Type': 'application/json',
+      'Cache-Control': 'no-store',
+      ...Object.fromEntries(res.headers),
+    },
   });
 }
-
 
 export async function POST(request) {
   const { name, email, phone, subject, message } = await request.json();
 
-   if (!name || !email || !message || !phone) {
+  if (!name || !email || !message || !phone) {
     return NextResponse.json(
       { error: 'Missing required fields: name, email, phone, message' },
       { status: 400 }
@@ -51,16 +55,21 @@ export async function POST(request) {
   }
 
   return NextResponse.json(
-    { message: 'Contact submitted successfully', id: data.id, created_at: data.created_at },
-    { status: 201 }
+    {
+      message: 'Contact submitted successfully',
+      id: data.id,
+      created_at: data.created_at,
+    },
+    { status: 201, headers: { 'Cache-Control': 'no-store' } }
   );
 }
 
-// DELETE /api/contacts  -> admin only
 export async function DELETE(request) {
   const res = new NextResponse();
   const ok = await requireAdmin(request, res);
-  if (!ok) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+  if (!ok) {
+    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+  }
 
   const { id } = await request.json();
   if (!id) {
@@ -75,6 +84,6 @@ export async function DELETE(request) {
 
   return new NextResponse(null, {
     status: 204,
-    headers: Object.fromEntries(res.headers),
+    headers: { 'Cache-Control': 'no-store', ...Object.fromEntries(res.headers) },
   });
 }
