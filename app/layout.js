@@ -12,11 +12,11 @@ export const metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://dentalaid.co.nz'),
+  // metadataBase: new URL('https://dentalaid.co.nz'),
   openGraph: {
     title: "Fillin - Dental Recruitment & Staffing Services",
     description: "Professional dental staffing solutions across the greater Auckland region",
-    url: 'https://dentalaid.co.nz',
+    // url: 'https://dentalaid.co.nz',
     siteName: 'Fillin',
     locale: 'en_NZ',
     type: 'website',
