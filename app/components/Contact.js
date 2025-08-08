@@ -1,26 +1,133 @@
 'use client';
 
+import { useState } from 'react';
+
 export default function Contact() {
- 
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+
+  const [status, setStatus] = useState({
+    type: '',
+    message: ''
+  });
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setStatus({ type: '', message: '' });
+
+    try {
+      const response = await fetch('/api/contacts', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.error || 'Submission failed');
+      }
+
+      setStatus({
+        type: 'success',
+        message: 'Thank you for your message! We will get back to you soon.'
+      });
+      setFormData({ name: '', email: '', message: '' });
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setStatus({
+        type: 'error',
+        message: 'There was an error submitting your message. Please try again.'
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
-    <section id="contact" className="py-20 bg-[#F5F5F5]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Get in Touch!</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Need more information or looking to use our services? Call or email us and we would be happy to help you.
-          </p>
-          <div className="flex justify-center py-5">
-              <a 
-                href="/contact" 
-                className="bg-[#2C2E9F] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#1a1c6b] transition-colors"
-              >
-                Contact Us
-              </a>
+    <section className="bg-white py-20 lg:py-[120px] overflow-hidden relative z-10">
+      <div className="container mx-auto">
+        <div className="flex flex-wrap lg:justify-between -mx-4">
+          <div className="w-full lg:w-1/2 xl:w-6/12 px-4">
+            <div className="max-w-[570px] mb-12 lg:mb-0">
+              <h2 className="text-dark mb-6 uppercase font-bold text-[32px] sm:text-[40px] lg:text-[36px] xl:text-[40px]">
+                GET IN TOUCH WITH US
+              </h2>
+              <p className="text-base text-body-color leading-relaxed mb-9">
+                Have questions about our services or looking to collaborate? We'd love to hear from you!
+                Fill out the form, and our team will get back to you promptly.
+              </p>
             </div>
+          </div>
+          <div className="w-full lg:w-1/2 xl:w-5/12 px-4">
+            <div className="bg-white relative rounded-lg p-8 sm:p-12 shadow-lg">
+              <form onSubmit={handleSubmit}>
+                <div className="mb-6">
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="Your Name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
+                    className="w-full rounded py-3 px-[14px] text-body-color text-base border border-[f0f0f0] outline-none focus-visible:shadow-none focus:border-primary"
+                  />
+                </div>
+                <div className="mb-6">
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="Your Email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                    className="w-full rounded py-3 px-[14px] text-body-color text-base border border-[f0f0f0] outline-none focus-visible:shadow-none focus:border-primary"
+                  />
+                </div>
+                <div className="mb-6">
+                  <textarea
+                    name="message"
+                    placeholder="Your Message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
+                    className="w-full rounded py-3 px-[14px] text-body-color text-base border border-[f0f0f0] outline-none focus-visible:shadow-none focus:border-primary h-36 resize-none"
+                  ></textarea>
+                </div>
+                <div>
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className={`w-full text-white bg-primary rounded border border-primary p-3 transition hover:bg-opacity-90 ${isSubmitting ? 'opacity-50 cursor-not-allowed' : ''}`}
+                  >
+                    {isSubmitting ? 'Sending...' : 'Send Message'}
+                  </button>
+                </div>
+                {status.message && (
+                  <div className={`mt-4 text-center ${status.type === 'success' ? 'text-green-600' : 'text-red-600'}`}>
+                    {status.message}
+                  </div>
+                )}
+              </form>
+            </div>
+          </div>
         </div>
       </div>
     </section>
   );
-} 
+}
