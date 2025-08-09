@@ -1,15 +1,15 @@
 export default function About() {
   return (
-    <section className="py-20 bg-white">
+    <section id="about" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
             <h2 className="text-4xl font-bold text-gray-900 mb-6">About Fillin</h2>
             <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-              Established in 2016, Fillin started as a temporary staff provider, however, over the years it has grown into a company that offers a variety of services that include recruitment, temping services, staff training, and dental equipment repairs and maintenance.
+             We started our journey in 2016 in Auckland, New Zealand, and have since moved into NSW, Australia. We specialise in dental recruitment, helping clinics fill in staff vacancies. We also provide temporary dental assistants, receptionists, and hygienists for casual, short, and fixed-term placements.
             </p>
             <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-              We service the greater Auckland region, from Orewa in the north, down to Pukekohe in the south, and from the east coast to the west coast of Auckland. Our commitment to excellence and professional service has made us a trusted partner for dental practices across the region.
+            Our agency is open 24/7, all year round, so feel free to contact us at any time.
             </p>
             
             <div className="grid grid-cols-2 gap-6">
