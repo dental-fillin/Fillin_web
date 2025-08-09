@@ -83,6 +83,10 @@ export default function Contact() {
               Have a question or want to get in touch? Fill out the form below or use our contact
               details to reach us directly.
             </p>
+            <p className="text-lg md:text-xl mb-8 text-gray-100 max-w-2xl mx-auto">
+              <strong>Opening Hours:</strong><br />
+              Available by phone from 6 am to 8 pm, and by SMS or email 24/7
+            </p>
           </div>
         </div>
       </section>
@@ -210,14 +214,18 @@ export default function Contact() {
               <h3 className="text-2xl font-bold text-gray-900 mb-4">Contact Information</h3>
               <div className="space-y-4">
                 <div className="flex items-center text-gray-700">
+                  {/* Phone icon */}
                   <svg className="w-6 h-6 text-[#2C2E9F] mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 2a2 2 0 012 2v16a2 2 0 01-2 2H8a2 2 0 01-2-2V4a2 2 0 012-2h8zm-4 18v-6m0 0V8m0 6h4m-4 0H8" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H5a2 2 0 01-2-2V5zm0 12a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H5a2 2 0 01-2-2v-2zm12-12a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zm0 12a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                   </svg>
                   <span>+64 9 XXX XXXX</span>
                 </div>
                 <div className="flex items-center text-gray-700">
+                  {/* Email icon */}
                   <svg className="w-6 h-6 text-[#2C2E9F] mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 12H8m8 0a4 4 0 11-8 0 4 4 0 018 0zm-8 0a8 8 0 1116 0 8 8 0 01-16 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 4H8a4 4 0 00-4 4v8a4 4 0 004 4h8a4 4 0 004-4V8a4 4 0 00-4-4z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M22 6l-10 7L2 6" />
                   </svg>
                   <span>info@dentalaid.co.nz</span>
                 </div>
@@ -227,8 +235,9 @@ export default function Contact() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                   </svg>
                   <div>
-                    <div>Greater Auckland Region</div>
-                    <div className="text-sm text-gray-500">From Orewa to Pukekohe</div>
+                    <div>Fillin Limited</div>
+                    <div>Sydney, New South Whales</div>
+                    <div>Australia</div>
                   </div>
                 </div>
               </div>
