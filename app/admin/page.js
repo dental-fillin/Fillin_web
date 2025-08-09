@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
 
 export default function AdminDashboard() {
   const [contacts, setContacts] = useState([]);
@@ -53,12 +54,22 @@ export default function AdminDashboard() {
     <div className="container mx-auto p-4">
       <div className="flex justify-between items-center mb-6">
         <h1 className="text-3xl font-bold">Admin Dashboard - Contact Forms</h1>
-        <button
-          onClick={handleLogout}
-          className="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 transition"
-        >
-          Logout
-        </button>
+        <div className="flex gap-2">
+          {/* Manage Job Openings Button */}
+          <Link
+            href="/admin/jobopenings"
+            className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition"
+          >
+            Manage Job Openings
+          </Link>
+          {/* Logout Button */}
+          <button
+            onClick={handleLogout}
+            className="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 transition"
+          >
+            Logout
+          </button>
+        </div>
       </div>
 
       <div className="overflow-x-auto">
@@ -83,7 +94,9 @@ export default function AdminDashboard() {
                 <td className="px-6 py-4 border-b">{contact.subject || '—'}</td>
                 <td className="px-6 py-4 border-b">{contact.message || '—'}</td>
                 <td className="px-6 py-4 border-b">
-                  {contact.created_at ? new Date(contact.created_at).toLocaleString() : 'N/A'}
+                  {contact.created_at
+                    ? new Date(contact.created_at).toLocaleString()
+                    : 'N/A'}
                 </td>
                 <td className="px-6 py-4 border-b">
                   <button
@@ -98,7 +111,10 @@ export default function AdminDashboard() {
 
             {contacts.length === 0 && (
               <tr>
-                <td className="px-6 py-6 text-center text-gray-500" colSpan={7}>
+                <td
+                  className="px-6 py-6 text-center text-gray-500"
+                  colSpan={7}
+                >
                   No contacts found.
                 </td>
               </tr>

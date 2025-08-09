@@ -5,7 +5,6 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-// adjust path if needed
 import { ContactSchema } from '@/lib/schema';
 
 export default function Contact() {

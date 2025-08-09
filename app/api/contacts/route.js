@@ -2,6 +2,7 @@ import { supabase } from '@/lib/supabase';
 import { NextResponse } from 'next/server';
 import { getIronSession } from 'iron-session';
 import { sessionOptions } from '@/lib/sessionOptions';
+import { ContactSchema } from '@/lib/schema';
 
 async function requireAdmin(request, resForSession) {
   const session = await getIronSession(request, resForSession, sessionOptions);
@@ -35,33 +36,42 @@ export async function GET(request) {
 }
 
 export async function POST(request) {
-  const { name, email, phone, subject, message } = await request.json();
+  try {
+    const body = await request.json();
 
-  if (!name || !email || !message || !phone) {
+    // ✅ Validate with Zod
+    const parsed = ContactSchema.safeParse(body);
+    if (!parsed.success) {
+      const issues = parsed.error.flatten();
+      return NextResponse.json(
+        { error: 'Validation failed', issues },
+        { status: 400 }
+      );
+    }
+
+    const { name, email, phone, subject, message } = parsed.data;
+
+    const { data, error } = await supabase
+      .from('contacts')
+      .insert([{ name, email, phone, subject, message }])
+      .select('id, created_at')
+      .single();
+
+    if (error) {
+      return NextResponse.json({ error: error.message }, { status: 500 });
+    }
+
     return NextResponse.json(
-      { error: 'Missing required fields: name, email, phone, message' },
-      { status: 400 }
+      {
+        message: 'Contact submitted successfully',
+        id: data.id,
+        created_at: data.created_at,
+      },
+      { status: 201, headers: { 'Cache-Control': 'no-store' } }
     );
+  } catch (err) {
+    return NextResponse.json({ error: err.message }, { status: 500 });
   }
-
-  const { data, error } = await supabase
-    .from('contacts')
-    .insert([{ name, email, phone, subject, message }])
-    .select('id, created_at')
-    .single();
-
-  if (error) {
-    return NextResponse.json({ error: error.message }, { status: 500 });
-  }
-
-  return NextResponse.json(
-    {
-      message: 'Contact submitted successfully',
-      id: data.id,
-      created_at: data.created_at,
-    },
-    { status: 201, headers: { 'Cache-Control': 'no-store' } }
-  );
 }
 
 export async function DELETE(request) {
