@@ -1,6 +1,6 @@
 # Fillin - Dental Service
 
-A modern, responsive website clone of [Dental Aid](https://dentalaid.co.nz/) built with Next.js and Tailwind CSS.
+A modern, responsive website built with Next.js and Tailwind CSS.
 
 ## Features
 
