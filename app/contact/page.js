@@ -52,7 +52,7 @@ export default function ContactPage() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H5a2 2 0 01-2-2V5zm0 12a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H5a2 2 0 01-2-2v-2zm12-12a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zm0 12a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                   </svg>
-                  <span>+61 (0)4 XX XXX XXX</span>
+                  <span>041 4177663</span>
                 </div>
                 <div className="flex items-center text-gray-700">
                   {/* Email icon */}
@@ -60,7 +60,7 @@ export default function ContactPage() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 4H8a4 4 0 00-4 4v8a4 4 0 004 4h8a4 4 0 004-4V8a4 4 0 00-4-4z" />
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M22 6l-10 7L2 6" />
                   </svg>
-                  <span>info@fillin.au</span>
+                  <span>fillinau@gmail.com</span>
                 </div>
                 <div className="flex items-center text-gray-700">
                   <svg className="w-6 h-6 text-[#2C2E9F] mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">

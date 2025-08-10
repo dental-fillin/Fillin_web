@@ -6,12 +6,11 @@ export default function Hero() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-              Dental Recruitment
+            <h1 className="text-4xl md:text-5xl lg:text-4xl font-bold mb-6">
+              Fillin - When you're short on staff, we're here to fill in
             </h1>
-            <p className="text-xl md:text-2xl mb-8 text-gray-100">
-              Fillin – Dental recruiters and temporary staff providers.
-              When you’re short on staff, we’re here to Fill In
+            <p className="text-xl md:text-xl mb-8 text-gray-100">
+              Providing reliable dental staffing solutions across New South Wales, Fillin connects clinics with qualified professionals for both temporary and permanent roles. Trust us to keep your practice running smoothly, even when you’re short on staff.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a
@@ -32,7 +31,7 @@ export default function Hero() {
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl flex items-center justify-center">
               <div className="relative w-full" style={{ aspectRatio: "4/3", minHeight: "18rem" }}>
                 <Image
-                  src="/home_img.png"
+                  src="/h2.jpeg"
                   alt="Fillin Home"
                   fill
                   style={{ objectFit: "fill" }}
