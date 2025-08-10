@@ -23,7 +23,6 @@ export async function POST(request) {
     return NextResponse.json({ error: 'Invalid JSON body' }, { status: 400 });
   }
 
-  // Server-side validation with Zod to prevent malformed inserts
   const parsed = JobOpeningSchema.safeParse(json);
   if (!parsed.success) {
     return NextResponse.json(

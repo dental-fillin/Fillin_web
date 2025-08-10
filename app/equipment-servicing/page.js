@@ -58,7 +58,6 @@ export default function EquipmentServicing() {
     }
   ];
 
-  // Server component; internal navigation via fragment link.
 
   return (
     <main className="min-h-screen">

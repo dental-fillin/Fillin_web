@@ -12,7 +12,7 @@ export async function middleware(request) {
   try {
     const session = await getIronSession(request, response, sessionOptions);
     if (session?.user?.role === 'admin') {
-      return response; // authorized
+      return response;
     }
   } catch (e) {
     console.error('Session read failed in middleware:', e);

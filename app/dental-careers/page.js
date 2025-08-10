@@ -34,8 +34,7 @@ export default function DentalCareers() {
     }
   ];
 
-  // Static page now server-rendered; internal section link uses anchor instead of programmatic scroll.
-
+ 
   return (
     <main className="min-h-screen">
       <Header />

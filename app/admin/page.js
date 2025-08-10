@@ -36,7 +36,7 @@ export default function AdminDashboard() {
     }
   };
 
-  useEffect(() => { loadContacts(); }, []); // initial load
+  useEffect(() => { loadContacts(); }, []);
 
   const handleDelete = async (id) => {
     if (!confirm('Delete this contact message?')) return;

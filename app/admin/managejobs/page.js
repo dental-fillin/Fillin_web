@@ -39,7 +39,6 @@ export default function ManageJobsPage() {
 
   useEffect(() => {
     loadJobs();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleDelete = async (job_id) => {

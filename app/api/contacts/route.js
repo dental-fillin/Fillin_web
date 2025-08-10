@@ -18,16 +18,15 @@ export async function GET(request) {
 
   const { searchParams } = new URL(request.url);
   const limit = Math.min(parseInt(searchParams.get('limit') || '25', 10), 100);
-  const cursor = searchParams.get('cursor'); // expecting created_at ISO string
+  const cursor = searchParams.get('cursor');
 
   let query = supabase
     .from('contacts')
     .select('*')
     .order('created_at', { ascending: false })
-    .limit(limit + 1); // fetch one extra to know if next page
+    .limit(limit + 1); 
 
   if (cursor) {
-    // Fetch records before the cursor timestamp
     query = query.lt('created_at', cursor);
   }
 
@@ -58,7 +57,6 @@ export async function POST(request) {
   try {
     const body = await request.json();
 
-    // ✅ Validate with Zod
     const parsed = ContactSchema.safeParse(body);
     if (!parsed.success) {
       const issues = parsed.error.flatten();

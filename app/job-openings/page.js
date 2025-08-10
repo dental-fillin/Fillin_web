@@ -3,7 +3,6 @@ import Footer from '../components/Footer';
 import { supabase } from '@/lib/supabase';
 import JobsClient from './JobsClient';
 
-// Always dynamic so fresh listings are rendered
 export const dynamic = 'force-dynamic';
 
 export const metadata = {

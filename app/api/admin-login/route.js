@@ -12,13 +12,10 @@ export async function POST(request) {
     return NextResponse.json({ error: 'Invalid credentials' }, { status: 401 });
   }
 
-  // Important: create a Response you can attach cookies to
   const res = NextResponse.json({ message: 'Logged in' });
 
-  // Attach iron-session to this request/response pair
   const session = await getIronSession(request, res, sessionOptions);
 
-  // Store minimal data
   session.user = { role: 'admin' };
   await session.save();
 

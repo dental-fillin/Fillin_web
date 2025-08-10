@@ -35,7 +35,7 @@ export default function Hero() {
                   src="/home_img.png"
                   alt="Fillin Home"
                   fill
-                  style={{ objectFit: "contain" }}
+                  style={{ objectFit: "fill" }}
                   className="rounded-xl"
                   priority
                 />
