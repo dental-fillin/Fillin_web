@@ -16,16 +16,35 @@ export async function GET(request) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }
 
-  const { data, error } = await supabase
+  const { searchParams } = new URL(request.url);
+  const limit = Math.min(parseInt(searchParams.get('limit') || '25', 10), 100);
+  const cursor = searchParams.get('cursor'); // expecting created_at ISO string
+
+  let query = supabase
     .from('contacts')
     .select('*')
-    .order('created_at', { ascending: false });
+    .order('created_at', { ascending: false })
+    .limit(limit + 1); // fetch one extra to know if next page
 
+  if (cursor) {
+    // Fetch records before the cursor timestamp
+    query = query.lt('created_at', cursor);
+  }
+
+  const { data, error } = await query;
   if (error) {
     return NextResponse.json({ error: error.message }, { status: 500 });
   }
 
-  return new NextResponse(JSON.stringify(data), {
+  let nextCursor = null;
+  let items = data;
+  if (data.length === limit + 1) {
+    const last = data[data.length - 2];
+    nextCursor = last.created_at;
+    items = data.slice(0, -1);
+  }
+
+  return new NextResponse(JSON.stringify({ items, nextCursor, limit }), {
     status: 200,
     headers: {
       'Content-Type': 'application/json',

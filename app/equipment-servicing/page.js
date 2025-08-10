@@ -1,7 +1,17 @@
-'use client';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Image from "next/image";
+
+export const metadata = {
+  title: 'Dental Equipment Servicing & Safety Testing | Fillin NSW',
+  description: 'Electrical safety testing, preventive maintenance, repairs & installation for dental equipment across NSW. Reliable technical support & rapid response.',
+  alternates: { canonical: 'https://fillin.au/equipment-servicing' },
+  openGraph: {
+    title: 'Dental Equipment Servicing & Repairs | Fillin',
+    description: 'Preventive maintenance & certified safety testing for dental practices in NSW.',
+    url: 'https://fillin.au/equipment-servicing'
+  }
+};
 
 export default function EquipmentServicing() {
   const equipmentTypes = [
@@ -48,12 +58,7 @@ export default function EquipmentServicing() {
     }
   ];
 
-  const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+  // Server component; internal navigation via fragment link.
 
   return (
     <main className="min-h-screen">
@@ -72,12 +77,12 @@ export default function EquipmentServicing() {
               and service work for dental equipment.
             </p>
             <div className="flex justify-center">
-              <button 
-                onClick={() => scrollToSection('our-services')}
+              <a
+                href="#our-services"
                 className="bg-white text-[#2C2E9F] px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
               >
                 View Services
-              </button>
+              </a>
             </div>
           </div>
         </div>

@@ -2,6 +2,17 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Image from 'next/image';
 
+export const metadata = {
+  title: 'Dental Staff Training & Upskilling Programs | Fillin NSW',
+  description: 'Custom dental staff training for assistants, receptionists & practice managers in NSW. Practical learning, onboarding support & job placement guidance.',
+  alternates: { canonical: 'https://fillin.au/staff-training' },
+  openGraph: {
+    title: 'Dental Staff Training – Upskill Your Team | Fillin',
+    description: 'Tailored training programs for dental support staff with hands-on learning & mentoring.',
+    url: 'https://fillin.au/staff-training'
+  }
+};
+
 export default function StaffTraining() {
   const testimonials = [
     {
