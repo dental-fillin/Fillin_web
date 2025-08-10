@@ -1,6 +1,17 @@
-'use client';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import Image from "next/image";
+
+export const metadata = {
+  title: 'Dental Equipment Servicing & Safety Testing | Fillin NSW',
+  description: 'Electrical safety testing, preventive maintenance, repairs & installation for dental equipment across NSW. Reliable technical support & rapid response.',
+  alternates: { canonical: 'https://fillin.au/equipment-servicing' },
+  openGraph: {
+    title: 'Dental Equipment Servicing & Repairs | Fillin',
+    description: 'Preventive maintenance & certified safety testing for dental practices in NSW.',
+    url: 'https://fillin.au/equipment-servicing'
+  }
+};
 
 export default function EquipmentServicing() {
   const equipmentTypes = [
@@ -47,12 +58,6 @@ export default function EquipmentServicing() {
     }
   ];
 
-  const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
 
   return (
     <main className="min-h-screen">
@@ -71,12 +76,12 @@ export default function EquipmentServicing() {
               and service work for dental equipment.
             </p>
             <div className="flex justify-center">
-              <button 
-                onClick={() => scrollToSection('our-services')}
+              <a
+                href="#our-services"
                 className="bg-white text-[#2C2E9F] px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
               >
                 View Services
-              </button>
+              </a>
             </div>
           </div>
         </div>
@@ -121,23 +126,22 @@ export default function EquipmentServicing() {
               </div>
             </div>
             <div className="relative">
-              <div className="bg-[#F5F5F5] rounded-2xl p-8">
-                <div className="text-center">
-                  <div className="w-20 h-20 bg-[#2C2E9F] rounded-full mx-auto mb-6 flex items-center justify-center">
-                    <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                    </svg>
-                  </div>
-                  <h3 className="text-2xl font-semibold text-gray-900 mb-4">Expert Technicians</h3>
-                  <p className="text-gray-600 leading-relaxed">
-                    Our certified technicians have extensive experience with all types of dental equipment 
-                    and provide reliable, professional service.
-                  </p>
+              <div className="flex items-center justify-center">
+                 <div className="w-full" style={{ height: "280px", minHeight: "20rem" }}>
+                  <Image
+                    src="/servicing_img.png"
+                    alt="Equipment Servicing"
+                    fill
+                    style={{ objectFit: "contain" }}
+                    className="rounded-xl"
+                    priority
+                  />
                 </div>
               </div>
             </div>
           </div>
+
+          
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="relative">
@@ -334,4 +338,4 @@ export default function EquipmentServicing() {
       <Footer />
     </main>
   );
-} 
+}

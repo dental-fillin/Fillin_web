@@ -1,6 +1,16 @@
-'use client';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+
+export const metadata = {
+  title: 'Dental Careers & Growth Pathways | Fillin NSW',
+  description: 'Advance your dental career in New South Wales. Explore professional development, supportive culture, benefits and current openings through Fillin.',
+  alternates: { canonical: 'https://fillin.au/dental-careers' },
+  openGraph: {
+    title: 'Dental Careers – Professional Growth | Fillin',
+    description: 'Career development, training and job opportunities for dental professionals across NSW.',
+    url: 'https://fillin.au/dental-careers'
+  }
+};
 
 export default function DentalCareers() {
   const testimonials = [
@@ -24,13 +34,7 @@ export default function DentalCareers() {
     }
   ];
 
-  const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
+ 
   return (
     <main className="min-h-screen">
       <Header />
@@ -43,16 +47,16 @@ export default function DentalCareers() {
               Dental Careers
             </h1>
             <p className="text-xl md:text-2xl mb-8 text-gray-100 max-w-3xl mx-auto">
-              Join our team of dental professionals and make a difference in people's oral health. 
-              We offer exciting career opportunities across the greater Auckland region.
+              Join our team of dental professionals and make a difference in people's oral health.
+              We offer exciting career opportunities across New South Wales.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button 
-                onClick={() => scrollToSection('current-openings')}
+              <a
+                href="#current-openings"
                 className="bg-white text-[#2C2E9F] px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
               >
                 View Open Positions
-              </button>
+              </a>
             </div>
           </div>
         </div>
@@ -108,51 +112,17 @@ export default function DentalCareers() {
         </div>
       </section>
 
-      {/* Current Openings - Coming Soon */}
+      {/* Current Openings CTA */}
       <section id="current-openings" className="py-20 bg-[#F5F5F5]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <div className="w-24 h-24 bg-[#2C2E9F] rounded-full mx-auto mb-8 flex items-center justify-center">
-              <svg className="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-            </div>
             <h2 className="text-4xl font-bold text-gray-900 mb-6">Current Openings</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-              We're currently updating our job listings. New opportunities will be posted here soon!
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-8">
+              Explore active roles and apply directly. We update listings frequently—check back often if you don't see a match today.
             </p>
-            <div className="bg-white rounded-xl shadow-lg p-8 max-w-2xl mx-auto">
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Coming Soon</h3>
-              <p className="text-gray-600 mb-6">
-                We're working on bringing you the latest dental career opportunities. Check back soon for:
-              </p>
-              <ul className="text-left space-y-3 mb-8">
-                <li className="flex items-center">
-                  <svg className="w-5 h-5 text-[#2C2E9F] mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-gray-700">Dental Hygienist positions</span>
-                </li>
-                <li className="flex items-center">
-                  <svg className="w-5 h-5 text-[#2C2E9F] mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-gray-700">Dental Assistant roles</span>
-                </li>
-                <li className="flex items-center">
-                  <svg className="w-5 h-5 text-[#2C2E9F] mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-gray-700">Dental Receptionist opportunities</span>
-                </li>
-                <li className="flex items-center">
-                  <svg className="w-5 h-5 text-[#2C2E9F] mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-gray-700">Dentist positions</span>
-                </li>
-              </ul>
-            </div>
+            <a href="/job-openings" className="inline-block bg-[#2C2E9F] text-white px-10 py-4 rounded-lg font-semibold hover:bg-[#1a1c6b] transition-colors shadow">
+              View Job Openings
+            </a>
           </div>
         </div>
       </section>

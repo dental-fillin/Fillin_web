@@ -2,6 +2,7 @@ import { supabase } from '@/lib/supabase';
 import { NextResponse } from 'next/server';
 import { getIronSession } from 'iron-session';
 import { sessionOptions } from '@/lib/sessionOptions';
+import { ContactSchema } from '@/lib/schema';
 
 async function requireAdmin(request, resForSession) {
   const session = await getIronSession(request, resForSession, sessionOptions);
@@ -15,16 +16,34 @@ export async function GET(request) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }
 
-  const { data, error } = await supabase
+  const { searchParams } = new URL(request.url);
+  const limit = Math.min(parseInt(searchParams.get('limit') || '25', 10), 100);
+  const cursor = searchParams.get('cursor');
+
+  let query = supabase
     .from('contacts')
     .select('*')
-    .order('created_at', { ascending: false });
+    .order('created_at', { ascending: false })
+    .limit(limit + 1); 
 
+  if (cursor) {
+    query = query.lt('created_at', cursor);
+  }
+
+  const { data, error } = await query;
   if (error) {
     return NextResponse.json({ error: error.message }, { status: 500 });
   }
 
-  return new NextResponse(JSON.stringify(data), {
+  let nextCursor = null;
+  let items = data;
+  if (data.length === limit + 1) {
+    const last = data[data.length - 2];
+    nextCursor = last.created_at;
+    items = data.slice(0, -1);
+  }
+
+  return new NextResponse(JSON.stringify({ items, nextCursor, limit }), {
     status: 200,
     headers: {
       'Content-Type': 'application/json',
@@ -35,33 +54,41 @@ export async function GET(request) {
 }
 
 export async function POST(request) {
-  const { name, email, phone, subject, message } = await request.json();
+  try {
+    const body = await request.json();
 
-  if (!name || !email || !message || !phone) {
+    const parsed = ContactSchema.safeParse(body);
+    if (!parsed.success) {
+      const issues = parsed.error.flatten();
+      return NextResponse.json(
+        { error: 'Validation failed', issues },
+        { status: 400 }
+      );
+    }
+
+    const { name, email, phone, subject, message } = parsed.data;
+
+    const { data, error } = await supabase
+      .from('contacts')
+      .insert([{ name, email, phone, subject, message }])
+      .select('id, created_at')
+      .single();
+
+    if (error) {
+      return NextResponse.json({ error: error.message }, { status: 500 });
+    }
+
     return NextResponse.json(
-      { error: 'Missing required fields: name, email, phone, message' },
-      { status: 400 }
+      {
+        message: 'Contact submitted successfully',
+        id: data.id,
+        created_at: data.created_at,
+      },
+      { status: 201, headers: { 'Cache-Control': 'no-store' } }
     );
+  } catch (err) {
+    return NextResponse.json({ error: err.message }, { status: 500 });
   }
-
-  const { data, error } = await supabase
-    .from('contacts')
-    .insert([{ name, email, phone, subject, message }])
-    .select('id, created_at')
-    .single();
-
-  if (error) {
-    return NextResponse.json({ error: error.message }, { status: 500 });
-  }
-
-  return NextResponse.json(
-    {
-      message: 'Contact submitted successfully',
-      id: data.id,
-      created_at: data.created_at,
-    },
-    { status: 201, headers: { 'Cache-Control': 'no-store' } }
-  );
 }
 
 export async function DELETE(request) {

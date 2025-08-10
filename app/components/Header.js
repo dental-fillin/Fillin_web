@@ -20,7 +20,6 @@ export default function Header() {
               alt="Fillin Logo"
               width={40}
               height={40}
-              className="rounded-full"
             />
             <h1 className="text-2xl font-bold text-[#2C2E9F]">
               Fillin
