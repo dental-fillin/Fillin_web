@@ -7,8 +7,7 @@ export default function Footer() {
           <div className="col-span-1 md:col-span-2">
             <h3 className="text-2xl font-bold text-white mb-4">Fillin</h3>
             <p className="text-gray-300 mb-6 leading-relaxed">
-              We started our journey in 2016 in Auckland, New Zealand, and have since moved into NSW, Australia. We specialise in dental recruitment, helping clinics fill in staff vacancies. We also provide temporary dental assistants, receptionists, and hygienists for casual, short, and fixed-term placements.
-              Our agency is open 24/7, all year round, so feel free to contact us at any time.
+              Our journey in Auckland, New Zealand, as Dental Aid. As our company grew, we decided it was time for our next big step, which lead us to to open our sister company – Fillin - in NSW, Australia. Since 2016, we have been providing the dental industry with several services, such as recruitment and temping solutions, staff training programmes, and equipment servicing. Our agency is open 24/7, all year round, so feel free to contact us at any time.
             </p>
           
           </div>
@@ -23,8 +22,8 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="/dental-careers" className="text-gray-300 hover:text-white transition-colors">
-                  Dental Careers
+                <a href="/careers" className="text-gray-300 hover:text-white transition-colors">
+                  Careers
                 </a>
               </li>
               <li>
@@ -33,13 +32,8 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="/equipment-servicing" className="text-gray-300 hover:text-white transition-colors">
-                  Equipment Servicing
-                </a>
-              </li>
-              <li>
-                <a href="/job-openings" className="text-gray-300 hover:text-white transition-colors">
-                  Job Openings
+                <a href="/service" className="text-gray-300 hover:text-white transition-colors">
+                  Services
                 </a>
               </li>
             </ul>

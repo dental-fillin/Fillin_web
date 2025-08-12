@@ -59,13 +59,11 @@ export default function StaffTraining() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
             <div>
-              <h2 className="text-4xl font-bold text-gray-900 mb-6">Train Your Staff</h2>
+              <h2 className="text-4xl font-bold text-gray-900 mb-6">Staff Training Solutions for Dental Practices</h2>
               <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                Looking to train or upskill your staff? We offer customised training courses for assistants, 
-                receptionists, and practice managers. This ensures that your new employees have the skills and 
-                training to succeed in their roles, and relieves you of the pressure of training them yourself 
-                while running a busy dental practice.
+                Enhance the capabilities of your team with our tailored training programs designed specifically for dental assistants, receptionists, oral health therapist, and practice managers. Our customised courses ensure your staff are equipped with the skills and confidence they need to excel—allowing you to focus on running your practice without the added pressure of onboarding and training.
               </p>
+              <p className="text-lg text-gray-600 mb-8 leading-relaxed"><strong>What We Offer:</strong></p>
               <div className="space-y-4">
                 <div className="flex items-start">
                   <svg className="w-6 h-6 text-[#2C2E9F] mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -97,7 +95,7 @@ export default function StaffTraining() {
               <div className="flex items-center justify-center">
                  <div className="w-full" style={{ height: "280px", minHeight: "25rem" }}>
                   <Image
-                    src="/train_img.png"
+                    src="/train_img.jpg"
                     alt="Staff Training"
                     fill
                     style={{ objectFit: "contain" }}
