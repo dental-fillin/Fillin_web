@@ -10,7 +10,7 @@ export default function Hero() {
               Fillin - When you're short on staff, we're here to fill in
             </h1>
             <p className="text-xl md:text-xl mb-8 text-gray-100">
-              Providing reliable dental staffing solutions across New South Wales, Fillin connects clinics with qualified professionals for both temporary and permanent roles. Trust us to keep your practice running smoothly, even when you’re short on staff.
+              Providing reliable dental staffing solutions across New South Wales. Fillin connects clinics with qualified professionals for both temporary and permanent roles. Trust us to keep your practice running smoothly, even when you’re short on staff.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a

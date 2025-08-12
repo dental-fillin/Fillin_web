@@ -14,11 +14,11 @@ export default function About() {
             
             <div className="grid grid-cols-2 gap-6">
               <div className="text-center">
-                <div className="text-3xl font-bold text-[#2C2E9F] mb-2">7+</div>
+                <div className="text-3xl font-bold text-[#2C2E9F] mb-2">10+</div>
                 <div className="text-gray-600">Years Experience</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-[#2C2E9F] mb-2">100+</div>
+                <div className="text-3xl font-bold text-[#2C2E9F] mb-2">200+</div>
                 <div className="text-gray-600">Happy Clients</div>
               </div>
             </div>
