@@ -31,17 +31,14 @@ export default function Header() {
             <a href="/" className="text-gray-700 hover:text-[#2C2E9F] font-medium transition-colors">
               Home
             </a>
-            <a href="/dental-careers" className="text-gray-700 hover:text-[#2C2E9F] font-medium transition-colors">
-              Dental Careers
+            <a href="/careers" className="text-gray-700 hover:text-[#2C2E9F] font-medium transition-colors">
+              Careers
             </a>
             <a href="/staff-training" className="text-gray-700 hover:text-[#2C2E9F] font-medium transition-colors">
               Staff Training
             </a>
-            <a href="/equipment-servicing" className="text-gray-700 hover:text-[#2C2E9F] font-medium transition-colors">
-              Equipment Servicing
-            </a>
-            <a href="/job-openings" className="text-gray-700 hover:text-[#2C2E9F] font-medium transition-colors">
-              Job Openings
+            <a href="/service" className="text-gray-700 hover:text-[#2C2E9F] font-medium transition-colors">
+            Services
             </a>
             <a href="/contact" className="text-gray-700 hover:text-[#2C2E9F] font-medium transition-colors">
               Contact Us
@@ -72,17 +69,14 @@ export default function Header() {
               <a href="/" className="block px-3 py-2 text-gray-700 hover:text-[#2C2E9F] font-medium">
                 Home
               </a>
-              <a href="/dental-careers" className="block px-3 py-2 text-gray-700 hover:text-[#2C2E9F] font-medium">
-                Dental Careers
+              <a href="/careers" className="block px-3 py-2 text-gray-700 hover:text-[#2C2E9F] font-medium">
+                Careers
               </a>
               <a href="/staff-training" className="block px-3 py-2 text-gray-700 hover:text-[#2C2E9F] font-medium">
                 Staff Training
               </a>
-              <a href="/equipment-servicing" className="block px-3 py-2 text-gray-700 hover:text-[#2C2E9F] font-medium">
-                Equipment Servicing
-              </a>
-              <a href="/job-openings" className="block px-3 py-2 text-gray-700 hover:text-[#2C2E9F] font-medium">
-                Job Openings
+              <a href="/service" className="block px-3 py-2 text-gray-700 hover:text-[#2C2E9F] font-medium">
+                Services
               </a>
               <a href="/contact" className="block px-3 py-2 text-gray-700 hover:text-[#2C2E9F] font-medium">
                 Contact Us

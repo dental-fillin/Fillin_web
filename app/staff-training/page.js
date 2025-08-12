@@ -95,7 +95,7 @@ export default function StaffTraining() {
               <div className="flex items-center justify-center">
                  <div className="w-full" style={{ height: "280px", minHeight: "25rem" }}>
                   <Image
-                    src="/train_img.png"
+                    src="/train_img.jpg"
                     alt="Staff Training"
                     fill
                     style={{ objectFit: "contain" }}

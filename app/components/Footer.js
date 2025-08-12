@@ -22,8 +22,8 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="/dental-careers" className="text-gray-300 hover:text-white transition-colors">
-                  Dental Careers
+                <a href="/careers" className="text-gray-300 hover:text-white transition-colors">
+                  Careers
                 </a>
               </li>
               <li>
@@ -32,13 +32,8 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="/equipment-servicing" className="text-gray-300 hover:text-white transition-colors">
-                  Equipment Servicing
-                </a>
-              </li>
-              <li>
-                <a href="/job-openings" className="text-gray-300 hover:text-white transition-colors">
-                  Job Openings
+                <a href="/service" className="text-gray-300 hover:text-white transition-colors">
+                  Services
                 </a>
               </li>
             </ul>
