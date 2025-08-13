@@ -47,7 +47,7 @@ export default function StaffTraining() {
               Staff Training
             </h1>
             <p className="text-xl md:text-2xl mb-8 text-gray-100 max-w-3xl mx-auto">
-              Looking to train or upskill your staff? We offer customised training courses for assistants, 
+              Looking to train or upskill your staff? We offer customised training courses for Dental assistants, 
               receptionists, and practice managers.
             </p>
           </div>

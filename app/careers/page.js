@@ -133,9 +133,9 @@ export default async function DentalCareers() {
       <section id="current-openings" className="py-20 bg-[#F5F5F5]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Current Openings</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">Jobs Openings</h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-8">
-              Explore active roles and apply directly. We update listings frequently—check back often if you don't see a match today.
+              Would you like to advertise your job vacancies with us? We can host your job openings on our website. Contact us for more information.
             </p>
           </div>
           
