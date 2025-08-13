@@ -20,6 +20,7 @@ export const metadata = {
 export default function Home() {
   return (
     <main className="min-h-screen">
+    <meta name="google-site-verification" content="l3vBSSDIr4zu6-XquqUYKjRw9vuDhaCSfO9wgcw4gtw" />
       <Header />
       <Hero />
       <Services />
