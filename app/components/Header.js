@@ -25,6 +25,7 @@ export default function Header() {
               Fillin
             </h1>
           </div>
+  <meta name="google-site-verification" content="l3vBSSDIr4zu6-XquqUYKjRw9vuDhaCSfO9wgcw4gtw" />
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
