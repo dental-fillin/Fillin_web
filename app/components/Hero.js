@@ -2,7 +2,6 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <meta name="google-site-verification" content="l3vBSSDIr4zu6-XquqUYKjRw9vuDhaCSfO9wgcw4gtw" />
     <section id="home" className="bg-gradient-to-r from-[#2C2E9F] to-[#1a1c6b] text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
