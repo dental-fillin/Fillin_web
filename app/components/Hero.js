@@ -14,16 +14,16 @@ export default function Hero() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a
-                href="/careers"
+                href="/service"
                 className="bg-white text-[#2C2E9F] px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors text-center"
               >
                 Get Started
               </a>
               <a
-                href="#about"
+                href="/contact"
                 className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-[#2C2E9F] transition-colors text-center"
               >
-                Learn More
+                Contact Us
               </a>
             </div>
           </div>

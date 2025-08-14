@@ -14,26 +14,6 @@ export const metadata = {
 };
 
 export default function StaffTraining() {
-  const testimonials = [
-    {
-      name: 'Lisa Thompson',
-      position: 'Dental Assistant',
-      text: 'The training program at Fillin was excellent. I learned everything I needed to know and got a job within weeks of completing the course.',
-      rating: 5
-    },
-    {
-      name: 'David Park',
-      position: 'Dental Receptionist',
-      text: 'The hands-on training and real practice scenarios made all the difference. I felt confident and prepared for my new role.',
-      rating: 5
-    },
-    {
-      name: 'Maria Rodriguez',
-      position: 'Practice Manager',
-      text: 'The practice manager training opened up so many opportunities for me. The instructors were experienced and supportive.',
-      rating: 5
-    }
-  ];
 
   return (
     <main className="min-h-screen">
@@ -47,7 +27,7 @@ export default function StaffTraining() {
               Staff Training
             </h1>
             <p className="text-xl md:text-2xl mb-8 text-gray-100 max-w-3xl mx-auto">
-              Looking to train or upskill your staff? We offer customised training courses for Dental assistants, 
+              Looking to train or upskill your staff? We offer customised training courses for dental assistants, 
               receptionists, and practice managers.
             </p>
           </div>
@@ -69,25 +49,25 @@ export default function StaffTraining() {
                   <svg className="w-6 h-6 text-[#2C2E9F] mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
-                  <span className="text-gray-600">Customized training programs for your practice</span>
+                  <span className="text-gray-600">Customised training programs aligned with your practice’s needs</span>
                 </div>
                 <div className="flex items-start">
                   <svg className="w-6 h-6 text-[#2C2E9F] mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
-                  <span className="text-gray-600">Hands-on practical training</span>
+                  <span className="text-gray-600">Practical, hands-on learning experiences</span>
                 </div>
                 <div className="flex items-start">
                   <svg className="w-6 h-6 text-[#2C2E9F] mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
-                  <span className="text-gray-600">Industry-recognized certifications</span>
+                  <span className="text-gray-600">Improve your hygienists&#39; time-management and treatment sales skills</span>
                 </div>
                 <div className="flex items-start">
                   <svg className="w-6 h-6 text-[#2C2E9F] mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
-                  <span className="text-gray-600">Ongoing support and mentoring</span>
+                  <span className="text-gray-600">Ongoing support and mentoring for continued professional growth</span>
                 </div>
               </div>
             </div>
@@ -163,38 +143,6 @@ export default function StaffTraining() {
           </div>
         </div>
       </section>
-
-      {/* Testimonials */}
-      <section className="py-20 bg-[#F5F5F5]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">What Our Graduates Say</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Hear from our training program graduates about their experience and career success.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <div key={index} className="bg-white rounded-xl p-8 text-center">
-                <div className="flex justify-center mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <svg key={i} className="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
-                  ))}
-                </div>
-                <p className="text-gray-600 mb-6 italic">"{testimonial.text}"</p>
-                <div>
-                  <h4 className="font-semibold text-gray-900">{testimonial.name}</h4>
-                  <p className="text-[#2C2E9F]">{testimonial.position}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Contact Section */}
       <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -67,10 +67,10 @@ export default function Services() {
             </p>
             <div className="flex justify-center">
               <a
-                href="/contact"
+                href="/careers"
                 className="bg-[#2C2E9F] text-white px-6 py-2 rounded-lg font-semibold shadow hover:bg-[#1a1c6b] transition-colors"
               >
-                Contact us →
+                Careers →
               </a>
             </div>
           </div>

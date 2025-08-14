@@ -24,10 +24,8 @@ export default function ContactPage() {
           <div className="text-center">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">Contact Us</h1>
             <p className="text-xl md:text-2xl mb-8 text-gray-100 max-w-3xl mx-auto">
-              <strong>Have a question or need assistance?</strong><br />
-              If you’re a dental practice looking for skilled professionals, we’re here to help.<br />
-              <strong>Are you a dental professional looking for work?</strong><br />
-              We’d love to connect with you. Use the form below or our contact details to get in touch.
+              Need a temp? Looking for work in the dental field? Or just have a question? Use the
+              form below or contact us directly—we’d love to hear from you
             </p>
             <p className="text-lg md:text-xl mb-8 text-gray-100 max-w-2xl mx-auto">
               <strong>Opening Hours:</strong><br />
@@ -70,7 +68,7 @@ export default function ContactPage() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                   </svg>
                   <div>
-                    <div>Fillin Limited</div>
+                    <div>Fillin</div>
                     <div>Sydney, New South Wales</div>
                     <div>Australia</div>
                   </div>

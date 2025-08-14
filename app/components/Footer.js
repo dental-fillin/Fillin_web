@@ -7,7 +7,7 @@ export default function Footer() {
           <div className="col-span-1 md:col-span-2">
             <h3 className="text-2xl font-bold text-white mb-4">Fillin</h3>
             <p className="text-gray-300 mb-6 leading-relaxed">
-              Our journey in Auckland, New Zealand, as Dental Aid. As our company grew, we decided it was time for our next big step, which lead us to to open our sister company – Fillin - in NSW, Australia. Since 2016, we have been providing the dental industry with several services, such as recruitment and temping solutions, staff training programmes, and equipment servicing. Our agency is open 24/7, all year round, so feel free to contact us at any time.
+              When you're short on staff, we're here to fill in.
             </p>
           
           </div>
@@ -44,22 +44,22 @@ export default function Footer() {
             <h4 className="text-lg font-semibold mb-4">Services</h4>
             <ul className="space-y-2">
               <li>
-                <a href="#temping-services" className="text-gray-300 hover:text-white transition-colors">
+                <a href="/service" className="text-gray-300 hover:text-white transition-colors">
                   Temping Services
                 </a>
               </li>
               <li>
-                <a href="#recruitment-services" className="text-gray-300 hover:text-white transition-colors">
+                <a href="/service" className="text-gray-300 hover:text-white transition-colors">
                   Recruitment Services
                 </a>
               </li>
               <li>
-                <a href="#staff-training" className="text-gray-300 hover:text-white transition-colors">
+                <a href="/service" className="text-gray-300 hover:text-white transition-colors">
                   Staff Training
                 </a>
               </li>
               <li>
-                <a href="#equipment-servicing" className="text-gray-300 hover:text-white transition-colors">
+                <a href="/service" className="text-gray-300 hover:text-white transition-colors">
                   Equipment Servicing
                 </a>
               </li>

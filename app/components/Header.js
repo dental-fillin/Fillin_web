@@ -33,7 +33,7 @@ export default function Header() {
               Home
             </a>
             <a href="/careers" className="text-gray-700 hover:text-[#2C2E9F] font-medium transition-colors">
-              Careers
+              Job Openings
             </a>
             <a href="/staff-training" className="text-gray-700 hover:text-[#2C2E9F] font-medium transition-colors">
               Staff Training
@@ -71,7 +71,7 @@ export default function Header() {
                 Home
               </a>
               <a href="/careers" className="block px-3 py-2 text-gray-700 hover:text-[#2C2E9F] font-medium">
-                Careers
+                Job Openings
               </a>
               <a href="/staff-training" className="block px-3 py-2 text-gray-700 hover:text-[#2C2E9F] font-medium">
                 Staff Training
