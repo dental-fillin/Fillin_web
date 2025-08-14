@@ -22,18 +22,18 @@ export default function Footer() {
                 </a>
               </li>
               <li>
+                <a href="/service" className="text-gray-300 hover:text-white transition-colors">
+                  Services
+                </a>
+              </li>
+              <li>
                 <a href="/careers" className="text-gray-300 hover:text-white transition-colors">
-                  Careers
+                  Job Openings
                 </a>
               </li>
               <li>
                 <a href="/staff-training" className="text-gray-300 hover:text-white transition-colors">
                   Staff Training
-                </a>
-              </li>
-              <li>
-                <a href="/service" className="text-gray-300 hover:text-white transition-colors">
-                  Services
                 </a>
               </li>
             </ul>

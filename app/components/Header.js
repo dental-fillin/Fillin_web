@@ -32,14 +32,14 @@ export default function Header() {
             <a href="/" className="text-gray-700 hover:text-[#2C2E9F] font-medium transition-colors">
               Home
             </a>
+            <a href="/service" className="text-gray-700 hover:text-[#2C2E9F] font-medium transition-colors">
+              Services
+            </a>
             <a href="/careers" className="text-gray-700 hover:text-[#2C2E9F] font-medium transition-colors">
               Job Openings
             </a>
             <a href="/staff-training" className="text-gray-700 hover:text-[#2C2E9F] font-medium transition-colors">
               Staff Training
-            </a>
-            <a href="/service" className="text-gray-700 hover:text-[#2C2E9F] font-medium transition-colors">
-            Services
             </a>
             <a href="/contact" className="text-gray-700 hover:text-[#2C2E9F] font-medium transition-colors">
               Contact Us
@@ -70,14 +70,14 @@ export default function Header() {
               <a href="/" className="block px-3 py-2 text-gray-700 hover:text-[#2C2E9F] font-medium">
                 Home
               </a>
+              <a href="/service" className="block px-3 py-2 text-gray-700 hover:text-[#2C2E9F] font-medium">
+                Services
+              </a>
               <a href="/careers" className="block px-3 py-2 text-gray-700 hover:text-[#2C2E9F] font-medium">
                 Job Openings
               </a>
               <a href="/staff-training" className="block px-3 py-2 text-gray-700 hover:text-[#2C2E9F] font-medium">
                 Staff Training
-              </a>
-              <a href="/service" className="block px-3 py-2 text-gray-700 hover:text-[#2C2E9F] font-medium">
-                Services
               </a>
               <a href="/contact" className="block px-3 py-2 text-gray-700 hover:text-[#2C2E9F] font-medium">
                 Contact Us
