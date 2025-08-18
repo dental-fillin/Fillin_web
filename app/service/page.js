@@ -173,7 +173,7 @@ export default function EquipmentServicing() {
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                         </svg>
                       </div>
-                      <h2 className="text-3xl font-bold text-gray-900 mb-4">Have an enquiry about the services??</h2>
+                      <h2 className="text-3xl font-bold text-gray-900 mb-4">Have an enquiry about the services?</h2>
                       <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
                         We’d be happy to assist. Our team is here to ensure your dental practice operates smoothly.
                       </p>
