@@ -31,7 +31,7 @@ export default function Hero() {
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl flex items-center justify-center">
               <div className="relative w-full" style={{ aspectRatio: "4/3", minHeight: "18rem" }}>
                 <Image
-                  src="/h2.jpeg"
+                  src="/h2.jpg"
                   alt="Fillin Home"
                   fill
                   style={{ objectFit: "fill" }}
