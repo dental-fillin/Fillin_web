@@ -22,14 +22,14 @@ export default function ContactPage() {
       <section className="bg-gradient-to-r from-[#2C2E9F] to-[#1a1c6b] text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">Contact Us</h1>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+              Contact Us
+            </h1>
             <p className="text-xl md:text-2xl mb-8 text-gray-100 max-w-3xl mx-auto">
-              Need a temp? Looking for work in the dental field? Or just have a question? Use the
-              form below or contact us directly—we’d love to hear from you
+              Ready to improve your cleanroom performance?
             </p>
-            <p className="text-lg md:text-xl mb-8 text-gray-100 max-w-2xl mx-auto">
-              <strong>Opening Hours:</strong><br />
-              Phone: 6:00 am – 8:00 pm &nbsp;|&nbsp; SMS / Email: 24/7
+            <p className="text-lg md:text-xl mb-8 text-gray-100 max-w-3xl mx-auto">
+              Get in touch today to discuss your requirements.
             </p>
           </div>
         </div>
@@ -39,7 +39,15 @@ export default function ContactPage() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
           {/* Contact Form (Client Component) */}
-          <ContactFormClient />
+          <div className="space-y-6">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
+              Send Us a Message
+            </h2>
+            <p className="text-gray-700">
+              We aim to respond promptly and provide clear, compliant solutions for your cleanroom operations.
+            </p>
+            <ContactFormClient />
+          </div>
 
           {/* Contact Info & Why Choose Fillin (unchanged static content) */}
           <div className="space-y-8">
@@ -80,10 +88,10 @@ export default function ContactPage() {
               <h3 className="text-2xl font-bold mb-6">Why Choose Fillin?</h3>
               <div className="space-y-4">
                 {[
-                  'Professional and qualified staff',
-                  'Comprehensive service coverage',
-                  'Reliable and trusted partner',
-                  'Years of industry experience',
+                  'Industry expertise in pharmaceutical environments',
+                  'End-to-end solutions (not just products)',
+                  'Fast response for urgent contamination events',
+                  'Compliance-focused approach (GMP, ISO standards)',
                 ].map((text) => (
                   <div key={text} className="flex items-start">
                     <svg className="w-5 h-5 text-white mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
