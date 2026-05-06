@@ -77,6 +77,8 @@ Landing + services pages with responsive sections (Header, Hero, Services, About
 
 Client + server Zod validation, persisted to `contacts` table.
 
+Optional SMTP forwarding is supported so every new contact submission can be sent directly to your inbox.
+
 ### Admin Area
 
 Session-based login (ENV credentials) to view & delete contact submissions, create and manage job openings.
@@ -136,6 +138,18 @@ Admin can create listings (validated server-side). Public `/job-openings` page l
 - Ensure environment variables are set (see `.env.example`).
 - Do not commit real secrets; `SESSION_PASSWORD` must be 32+ chars.
 - The `.gitignore` has been cleaned; JSON configs are tracked intentionally.
+
+### Contact Email Forwarding
+
+Set these variables to forward each new `/api/contacts` submission to your email:
+
+- `SMTP_HOST`
+- `SMTP_PORT` (example: `587`)
+- `SMTP_USER`
+- `SMTP_PASS`
+- `SMTP_SECURE` (`true` for SSL-only SMTP, often `false` with port `587`)
+- `CONTACT_NOTIFY_TO` (your inbox)
+- `CONTACT_NOTIFY_FROM` (optional; defaults to `SMTP_USER`)
 
 ## Changelog
 

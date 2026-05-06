@@ -2,13 +2,16 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import ContactFormClient from './ContactFormClient';
 
+const contactDescription =
+  'We help pharmaceutical and controlled-environment facilities maintain the highest standards of cleanroom performance - from supplies and garments to servicing, construction, and emergency decontamination.';
+
 export const metadata = {
-  title: 'Contact Fillin – Dental Recruitment & Staffing NSW',
-  description: 'Contact Fillin for dental recruitment, temporary staffing, training & equipment servicing across New South Wales. Phone 6am–8pm. SMS & Email 24/7.',
+  title: 'Contact Fillin – Cleanroom Enquiries',
+  description: contactDescription,
   alternates: { canonical: 'https://fillin.au/contact' },
   openGraph: {
-    title: 'Contact Fillin – Dental Staffing Support',
-    description: 'Reach our team for staffing, training and equipment servicing enquiries in NSW.',
+    title: 'Contact Fillin',
+    description: contactDescription,
     url: 'https://fillin.au/contact'
   }
 };

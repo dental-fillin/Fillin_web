@@ -4,13 +4,16 @@ import About from './components/About';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
+const homeDescription =
+  'We help pharmaceutical and controlled-environment facilities maintain the highest standards of cleanroom performance - from supplies and garments to servicing, construction, and emergency decontamination.';
+
 export const metadata = {
-  title: 'Dental Recruitment, Temp Staff & Training – New South Wales | Fillin',
-  description: 'Fillin provides dental recruitment, temporary hygienists, assistants, reception staff, training and equipment servicing across NSW. 24/7 availability – request staff or find a role.',
+  title: 'Cleanroom Supplies, Garments & Services | Fillin',
+  description: homeDescription,
   alternates: { canonical: 'https://fillin.au/' },
   openGraph: {
-    title: 'Fillin Dental Staffing – Recruitment & Temp Services (NSW)',
-    description: 'NSW dental recruitment, temp staffing, training & equipment servicing. Established 2016 – available 24/7.',
+    title: 'Fillin – Cleanroom Performance for Pharmaceutical & Controlled Environments',
+    description: homeDescription,
     url: 'https://fillin.au/',
     type: 'website'
   }
