@@ -1,15 +1,26 @@
 import "./globals.css";
 
+const siteDescription =
+  'We help pharmaceutical and controlled-environment facilities maintain the highest standards of cleanroom performance - from supplies and garments to servicing, construction, and emergency decontamination.';
+
 // Global SEO metadata (domain: fillin.au)
 export const metadata = {
   metadataBase: new URL('https://fillin.au'),
   title: {
-    default: 'Fillin – Dental Recruitment, Temp Staffing & Training (NSW Australia)',
-    template: '%s | Fillin Dental Staffing'
+    default: 'Fillin – Cleanroom Supplies, Garments & Controlled-Environment Services',
+    template: '%s | Fillin'
   },
-  description: 'Fillin (est. 2016) provides dental recruitment, temporary staffing, hygienists, assistants, reception, training & equipment servicing across New South Wales. Available 24/7.',
+  description: siteDescription,
   keywords: [
-    'dental recruitment NSW','dental staffing agency','temporary dental staff','locum dentist NSW','dental assistant recruitment','dental hygienist temping','dental reception staffing','dental training NSW','dental jobs New South Wales','Fillin dental'
+    'cleanroom supplies Australia',
+    'pharmaceutical cleanroom',
+    'controlled environment facility',
+    'cleanroom garments',
+    'cleanroom servicing',
+    'cleanroom construction support',
+    'emergency decontamination',
+    'GMP cleanroom',
+    'Fillin cleanroom'
   ],
   authors: [{ name: 'Fillin' }],
   creator: 'Fillin',
@@ -18,8 +29,8 @@ export const metadata = {
     canonical: 'https://fillin.au/'
   },
   openGraph: {
-    title: 'Fillin – Dental Recruitment & Temp Staffing (NSW)',
-    description: 'Dental recruitment, temp staff, training & equipment support across New South Wales. 24/7 availability.',
+    title: 'Fillin – Cleanroom Performance for Pharmaceutical & Controlled Environments',
+    description: siteDescription,
     url: 'https://fillin.au/',
     siteName: 'Fillin',
     locale: 'en_AU',
@@ -29,14 +40,14 @@ export const metadata = {
         url: '/logofin.svg',
         width: 512,
         height: 512,
-        alt: 'Fillin Dental Staffing Logo'
+        alt: 'Fillin logo'
       }
     ]
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Fillin – Dental Recruitment & Temp Staffing (NSW)',
-    description: 'Dental recruitment, temp staff, training & equipment support across New South Wales.',
+    title: 'Fillin – Cleanroom Supplies & Services',
+    description: siteDescription,
     images: ['/logofin.svg']
   },
   robots: {
@@ -78,8 +89,8 @@ export default function RootLayout({ children }) {
               name: 'Fillin',
               url: 'https://fillin.au',
               logo: 'https://fillin.au/logofin.svg',
-              description: 'Dental recruitment, temporary staffing, training & equipment servicing across New South Wales (Australia).',
-              areaServed: ['AU-NSW'],
+              description: siteDescription,
+              areaServed: ['AU'],
               sameAs: []
             })
           }}
@@ -92,11 +103,7 @@ export default function RootLayout({ children }) {
               '@type': 'WebSite',
               name: 'Fillin',
               url: 'https://fillin.au',
-              potentialAction: {
-                '@type': 'SearchAction',
-                target: 'https://fillin.au/job-openings?query={search_term_string}',
-                'query-input': 'required name=search_term_string'
-              }
+              description: siteDescription
             })
           }}
         />

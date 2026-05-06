@@ -123,16 +123,6 @@ export async function POST(request) {
 
     const { name, email, phone, subject, message } = parsed.data;
 
-    const { data, error } = await supabase
-      .from('contacts')
-      .insert([{ name, email, phone, subject, message }])
-      .select('id, created_at')
-      .single();
-
-    if (error) {
-      return NextResponse.json({ error: error.message }, { status: 500 });
-    }
-
     const emailResult = await sendContactNotification({
       name,
       email,
@@ -141,16 +131,34 @@ export async function POST(request) {
       message,
     });
 
-    if (emailResult.attempted && !emailResult.sent) {
+    if (!emailResult.attempted) {
+      return NextResponse.json(
+        {
+          error: {
+            message: 'Contact notification email is not configured on the server.',
+          },
+        },
+        { status: 503 }
+      );
+    }
+
+    if (!emailResult.sent) {
       console.error('Failed to send contact notification email:', emailResult.reason);
+      return NextResponse.json(
+        {
+          error: {
+            message: 'Failed to send your message. Please try again later.',
+            detail: emailResult.reason,
+          },
+        },
+        { status: 500 }
+      );
     }
 
     return NextResponse.json(
       {
         message: 'Contact submitted successfully',
-        id: data.id,
-        created_at: data.created_at,
-        email_sent: emailResult.sent,
+        email_sent: true,
       },
       { status: 201, headers: { 'Cache-Control': 'no-store' } }
     );
