@@ -6,24 +6,21 @@ export default function Hero() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
-            <h1 className="text-4xl md:text-5xl lg:text-4xl font-bold mb-6">
-              Fillin - When you're short on staff, we're here to fill in
+            <h1 className="text-3xl md:text-4xl lg:text-3xl font-bold mb-6">
+              Who We Are
             </h1>
+            <p className="text-2xl md:text-3xl font-bold mb-4 text-gray-100">
+              Delivering Contamination Control, Compliance, and Confidence.
+            </p>
             <p className="text-xl md:text-xl mb-8 text-gray-100">
-              Providing reliable dental staffing solutions across New South Wales. Fillin connects clinics with qualified professionals for both temporary and permanent roles. Trust us to keep your practice running smoothly, even when you’re short on staff.
+              We help pharmaceutical and controlled-environment facilities maintain the highest standards of cleanroom performance — from supplies and garments to servicing, construction, and emergency decontamination.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a
-                href="/service"
+                href="/contact"
                 className="bg-white text-[#2C2E9F] px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors text-center"
               >
-                Get Started
-              </a>
-              <a
-                href="/contact"
-                className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-[#2C2E9F] transition-colors text-center"
-              >
-                Contact Us
+                Get a Consultation
               </a>
             </div>
           </div>

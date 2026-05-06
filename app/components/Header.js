@@ -25,7 +25,7 @@ export default function Header() {
               Fillin
             </h1>
           </div>
-  <meta name="google-site-verification" content="l3vBSSDIr4zu6-XquqUYKjRw9vuDhaCSfO9wgcw4gtw" />
+          <meta name="google-site-verification" content="l3vBSSDIr4zu6-XquqUYKjRw9vuDhaCSfO9wgcw4gtw" />
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
@@ -35,11 +35,8 @@ export default function Header() {
             <a href="/service" className="text-gray-700 hover:text-[#2C2E9F] font-medium transition-colors">
               Services
             </a>
-            <a href="/careers" className="text-gray-700 hover:text-[#2C2E9F] font-medium transition-colors">
-              Job Openings
-            </a>
-            <a href="/staff-training" className="text-gray-700 hover:text-[#2C2E9F] font-medium transition-colors">
-              Staff Training
+            <a href="/about" className="text-gray-700 hover:text-[#2C2E9F] font-medium transition-colors">
+              About
             </a>
             <a href="/contact" className="text-gray-700 hover:text-[#2C2E9F] font-medium transition-colors">
               Contact Us
@@ -73,11 +70,8 @@ export default function Header() {
               <a href="/service" className="block px-3 py-2 text-gray-700 hover:text-[#2C2E9F] font-medium">
                 Services
               </a>
-              <a href="/careers" className="block px-3 py-2 text-gray-700 hover:text-[#2C2E9F] font-medium">
-                Job Openings
-              </a>
-              <a href="/staff-training" className="block px-3 py-2 text-gray-700 hover:text-[#2C2E9F] font-medium">
-                Staff Training
+              <a href="/about" className="block px-3 py-2 text-gray-700 hover:text-[#2C2E9F] font-medium">
+                About
               </a>
               <a href="/contact" className="block px-3 py-2 text-gray-700 hover:text-[#2C2E9F] font-medium">
                 Contact Us
